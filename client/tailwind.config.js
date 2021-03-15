@@ -6,7 +6,7 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      primary: colors.black,
+      primary: "#9147ff",
       primaryV: colors.white,
       secondary: "#3b82f6",
       secondaryV: "#bfdbfe",
@@ -22,6 +22,7 @@ module.exports = {
       muted: "#6c757d",
       black: colors.black,
       white: colors.white,
+      red: colors.red,
       gray: colors.trueGray,
     },
     zIndex: {
@@ -31,6 +32,9 @@ module.exports = {
       10: 10,
       20: 20,
       auto: "auto",
+    },
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
     },
   },
   Vs: {
