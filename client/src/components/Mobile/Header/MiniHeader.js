@@ -11,7 +11,7 @@ const MiniHeader = () => {
         {/* First Column */}
         <div className="flex space-x-6 items-center">
           <TwitchLogo />
-          <ContentCopyIcon />
+          <ContentCopyIcon className="hover:text-primary" />
         </div>
         {/* Second Column */}
         <div className="flex space-x-6 items-center">

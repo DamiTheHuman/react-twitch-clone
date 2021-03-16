@@ -1,0 +1,11 @@
+.live-stream-card .live {
+  top: 1rem;
+  left: 1rem;
+  color: white;
+}
+
+.live-stream-card .views {
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+}

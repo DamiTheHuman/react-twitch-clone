@@ -1,5 +1,5 @@
 import React from "react";
-import StreamCategoryCard from "../../StreamCategoryCard";
+import StreamCategoryCard from "../../cards/StreamCategoryCard";
 
 class StreamsBrowse extends React.Component {
   render() {
@@ -15,10 +15,10 @@ class StreamsBrowse extends React.Component {
       <div>
         {/* Title */}
         <div className="px-5 mb-4">
-          <h2 className="font-semibold text-h2">Browse</h2>
+          <h2 className="font-semibold sm:text-6xl text-4xl mb-2">Browse</h2>
         </div>
         {/* StreamsBrowse*/}
-        <div className="StreamsBrowse grid sm:grid-cols-4 grid-cols-2 gap-2 px-1p ">
+        <div className="grid sm:grid-cols-4 grid-cols-2 gap-2 px-2 ">
           {renderList}
         </div>
       </div>
