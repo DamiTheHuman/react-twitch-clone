@@ -1,0 +1,7 @@
+.options-dialogue {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  transform: translate(-85%, 20%);
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 4px rgba(0, 0, 0, 0.4) !important;
+}

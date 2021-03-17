@@ -1,7 +1,13 @@
 .streams .stream-category-card img {
   width: 304px;
 }
-
+/* Tablet */
+@media only screen and (max-width: 768px) {
+  .streams .stream-category-card img {
+    width: 207px;
+  }
+}
+/* Mobile */
 @media only screen and (max-width: 600px) {
   .streams .stream-category-card img {
     width: 135px;
@@ -11,7 +17,7 @@
 .streams .live-stream-card .thumbnail img {
   width: 332px;
 }
-
+/* Mobile */
 @media only screen and (max-width: 600px) {
   .streams .live-stream-card .thumbnail img {
     width: 244px;
