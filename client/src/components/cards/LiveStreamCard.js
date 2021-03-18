@@ -9,7 +9,7 @@ const LiveStreamCard = () => {
           <img
             src="http://via.placeholder.com/332x187/000000"
             className="w-full h-auto"
-            alt="A new Game"
+            alt="A live Stream"
           />
         </a>
         <div className="live text-xs absolute text-base uppercase">
@@ -26,7 +26,7 @@ const LiveStreamCard = () => {
           <img
             src="http://via.placeholder.com/36/FF0000"
             className="w-full h-auto rounded-full"
-            alt="A new Game"
+            alt="A User"
           />
         </div>
         <div className="stream-details text-sm">

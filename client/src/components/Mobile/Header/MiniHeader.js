@@ -29,8 +29,12 @@ class MiniHeader extends React.Component {
         <div className="flex justify-between">
           {/* First Column */}
           <div className="flex space-x-6 items-center">
-            <TwitchLogo />
-            <ContentCopyIcon className="hover:text-primary" />
+            <button>
+              <TwitchLogo />
+            </button>
+            <button>
+              <ContentCopyIcon className="hover:text-primary" />
+            </button>
           </div>
           {/* Second Column */}
           <div className="flex space-x-6 items-center">
