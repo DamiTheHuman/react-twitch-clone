@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AlertIcon from "mdi-react/DotsHorizontalIcon";
 import ContentCopyIcon from "mdi-react/ContentCopyIcon";
 import SearchIcon from "mdi-react/SearchIcon";
@@ -29,12 +30,12 @@ class MiniHeader extends React.Component {
         <div className="flex justify-between">
           {/* First Column */}
           <div className="flex space-x-6 items-center">
-            <button>
+            <Link to="/">
               <TwitchLogo />
-            </button>
-            <button>
+            </Link>
+            <Link to="/directory">
               <ContentCopyIcon className="hover:text-primary" />
-            </button>
+            </Link>
           </div>
           {/* Second Column */}
           <div className="flex space-x-6 items-center">

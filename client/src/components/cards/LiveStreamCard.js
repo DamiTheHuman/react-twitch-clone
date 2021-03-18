@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
 import "./LiveStreamCard.css";
 const LiveStreamCard = () => {
   return (
-    <div className="live-stream-card border w-max">
+    <div className="live-stream-card border w-full">
       <div className="relative thumbnail">
-        <a href="/#">
+        <Link to="/streams/1">
           <img
             src="http://via.placeholder.com/332x187/000000"
             className="w-full h-auto"
             alt="A live Stream"
           />
-        </a>
+        </Link>
         <div className="live text-xs absolute text-base uppercase">
           <div className="px-2 bg-red-500 rounded font-semibold">
             <p>Live</p>
