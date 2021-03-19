@@ -28,7 +28,7 @@ class Stream extends React.Component {
         <div className="flex flex-col xl:flex-row">
           <div className="stream-data xl:w-3/4 w-full">
             <img
-              src="http://via.placeholder.com/960x600/000000"
+              src="http://via.placeholder.com/960x600/"
               className="w-full h-full"
               alt="A Live Stream"
             />

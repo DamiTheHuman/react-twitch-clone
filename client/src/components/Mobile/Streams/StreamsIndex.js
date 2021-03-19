@@ -3,6 +3,7 @@ import "./StreamsIndex.css";
 import LiveStreamCard from "../../cards/LiveStreamCard";
 import StreamCategoryCard from "../../cards/StreamCategoryCard";
 import ScrollableContent from "../../common/ScrollableContent";
+import categoryData from "../../../api/dummyCategoryData";
 
 class StreamsIndex extends React.Component {
   render() {
@@ -15,16 +16,16 @@ class StreamsIndex extends React.Component {
       );
     });
 
-    const renderList = Streams.map((stream, index) => {
+    const renderCategories = categoryData.map((category, index) => {
       return (
         <React.Fragment key={index}>
-          <StreamCategoryCard stretch={true} />
+          <StreamCategoryCard category={category} stretch={true} />
         </React.Fragment>
       );
     });
 
     return (
-      <div className="streams px-2">
+      <div className="streams px-2 py-4">
         {/* Title */}
         <div className="title">
           <h2 className="font-semibold sm:text-6xl text-4xl mb-2">
@@ -43,7 +44,7 @@ class StreamsIndex extends React.Component {
           </a>
           <span>We Think You'll Like</span>
         </div>
-        <ScrollableContent>{renderList}</ScrollableContent>
+        <ScrollableContent>{renderCategories}</ScrollableContent>
         <div className="inline uppercase sm:text-2xl text-sm font-semibold text-secondaryV">
           <span>RECOMMENDED </span>
           <a href="/#" className="text-primary">
@@ -52,7 +53,7 @@ class StreamsIndex extends React.Component {
           <span>Channels</span>
         </div>
         {/* Recommended [Category] Channels */}
-        <ScrollableContent>{renderList}</ScrollableContent>
+        <ScrollableContent>{renderLiveStreams}</ScrollableContent>
       </div>
     );
   }

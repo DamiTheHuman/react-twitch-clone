@@ -34,7 +34,7 @@ const LiveStreamCard = () => {
           <h5 className="font-semibold">Discussing AI</h5>
           <p>Headless Coder</p>
           {/* Pills*/}
-          <div className="pills flex space-x-2">
+          <div className="pills flex flex-nowrap overflow-hidden space-x-2">
             <Pill content="Action" />
             <Pill content="Multiplayer" />
           </div>

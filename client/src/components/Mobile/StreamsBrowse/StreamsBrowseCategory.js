@@ -12,8 +12,8 @@ class StreamsBrowseCategory extends React.Component {
       );
     });
     return (
-      <div className="streams-browse-category px-2">
-        <div className="title-card py-4">
+      <div className="streams-browse-category px-2 py-4">
+        <div className="title-card mb-4">
           <div className="flex flex-row items-center space-x-2">
             {/* Category thumbnail*/}
             <img
@@ -32,7 +32,7 @@ class StreamsBrowseCategory extends React.Component {
             </div>
           </div>
         </div>
-        <div className="active-streams grid lg:grid-cols-3  sm:grid-cols-2 grid-cols-1  gap-2">
+        <div className="active-streams grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2">
           {renderLiveStreams}
         </div>
       </div>
