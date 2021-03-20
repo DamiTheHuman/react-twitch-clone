@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "title": "Just Chatting",
+      "viewers": "509K",
+      "followers": "1M",
+      "tags": ["IRL"],
+      "boxArt": "just-chatting"
+    },
+    {
+      "id": 1,
+      "title": "Fortnite",
+      "viewers": "12K",
+      "followers": "3M",
+      "tags": ["Shooter", "Action"],
+      "boxArt": "fortnite"
+    },
+    {
+      "id": 2,
+      "title": "Among Us",
+      "viewers": "12K",
+      "followers": "1K",
+      "tags": ["Strategy", "Survival"],
+      "boxArt": "among-us"
+    },
+    {
+      "id": 3,
+      "title": "Minecraft",
+      "viewers": "12K",
+      "followers": "200K",
+      "tags": ["Adventure Game", "Simulation"],
+      "boxArt": "minecraft"
+    },
+    {
+      "id": 4,
+      "title": "Rocket League",
+      "viewers": "120K",
+      "followers": "1M",
+      "tags": ["Driving/Racing Game", "Action"],
+      "boxArt": "rocket-league"
+    }
+  ]
+}

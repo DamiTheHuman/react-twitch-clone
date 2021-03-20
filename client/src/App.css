@@ -5,3 +5,24 @@
 h2 {
   /*  font-size: 3.375rem;*/
 }
+
+.min-content-height {
+  min-height: calc(100vh - 3rem);
+}
+.content-height {
+  height: calc(100vh - 3rem);
+}
+div[contenteditable] {
+  max-height: 66px;
+  overflow: auto;
+}
+
+div [contenteditable][placeholder]:empty:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: gray;
+  background-color: transparent;
+}
+[contenteditable] {
+  outline-color: #9147ff;
+}

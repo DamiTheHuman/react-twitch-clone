@@ -12,7 +12,7 @@ function App() {
     <div className="App font-inter bg-light">
       <BrowserRouter>
         <MiniHeader />
-        <div className="mt-12">
+        <div className="mt-12 min-content-height">
           <Switch>
             <Route path="/" component={StreamsIndex} exact />
             <Route path="/directory" component={StreamsBrowse} exact />

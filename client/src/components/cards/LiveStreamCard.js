@@ -14,7 +14,7 @@ const LiveStreamCard = () => {
           />
         </Link>
         <div className="live text-xs absolute text-base uppercase">
-          <div className="px-2 bg-red-500 rounded font-semibold">
+          <div className="px-2 bg-live rounded font-semibold">
             <p>Live</p>
           </div>
         </div>

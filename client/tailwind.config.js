@@ -11,6 +11,7 @@ module.exports = {
       secondary: "#3b82f6",
       secondaryV: "#53535f",
       light: "#f7f7f8",
+      live: "#e91916",
       dark: "#292929",
       darkPrimary: colors.white,
       darkPrimaryV: colors.black,

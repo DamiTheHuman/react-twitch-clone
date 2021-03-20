@@ -12,7 +12,7 @@ const StreamCategoryCard = ({ category, stretch }) => {
   });
   return (
     <div className={`stream-category-card border ${stretch ? "w-max" : ""} `}>
-      <Link to="/directory/game/1">
+      <Link to={`/directory/game/${category.id}`}>
         <img
           src={`http://localhost:3000/categories/${category.boxArt}.jpg`}
           className="w-full h-auto cursor-pointer"

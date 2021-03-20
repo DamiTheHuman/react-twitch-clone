@@ -1,16 +1,28 @@
 import React from "react";
 import StreamCategoryCard from "../../cards/StreamCategoryCard";
-import categoryData from "../../../api/dummyCategoryData";
+import { fetchCategories } from "../../../actions";
+import { connect } from "react-redux";
 
 class StreamsBrowse extends React.Component {
-  render() {
-    const renderCategories = categoryData.map((category, index) => {
+  componentDidMount() {
+    this.props.fetchCategories();
+  }
+  /*
+   *Render the list of categories retrieved from the server when available
+   */
+  renderCategories = () => {
+    if (!this.props.categories) {
+      return <div>Loading</div>;
+    }
+    return this.props.categories.map((category, index) => {
       return (
         <React.Fragment key={index}>
           <StreamCategoryCard category={category} />
         </React.Fragment>
       );
     });
+  };
+  render() {
     return (
       <div className="py-4">
         {/* Title */}
@@ -19,11 +31,13 @@ class StreamsBrowse extends React.Component {
         </div>
         {/* StreamsBrowse*/}
         <div className="grid sm:grid-cols-4 grid-cols-2 gap-2 px-2 ">
-          {renderCategories}
+          {this.renderCategories()}
         </div>
       </div>
     );
   }
 }
-
-export default StreamsBrowse;
+const mapStateToProps = (state) => {
+  return { categories: Object.values(state.categories) };
+};
+export default connect(mapStateToProps, { fetchCategories })(StreamsBrowse);
