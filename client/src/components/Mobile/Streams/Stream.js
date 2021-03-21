@@ -4,12 +4,19 @@ import ChatBoxActions from "../../ChatBox/ChatBoxActions";
 import Pill from "../../common/Pill";
 
 class Stream extends React.Component {
-  state = { scrolledToBottom: false };
+  state = {
+    scrolledToBottom: false,
+    chatLog: Array(5).fill({
+      user: "HeadlessCoder",
+      comment: "Hello World!",
+      userColor: "red-400",
+    }),
+  };
   /*
    *Checks if the user has scrolled to the bottom of the chat
    */
   onScroll = (el) => {
-    if (this.state.scrolledToBottom == false) {
+    if (this.state.scrolledToBottom === false) {
       if (el.scrollHeight - el.scrollTop - el.clientHeight < 1) {
         this.setState({ scrolledToBottom: true }, () => {
           el.scrollTop = el.scrollHeight + 16; //Scroll to the bottom of the chat
@@ -18,6 +25,20 @@ class Stream extends React.Component {
     } else if (el.scrollHeight - el.scrollTop - el.clientHeight > 1) {
       this.setState({ scrolledToBottom: false });
     }
+  };
+
+  onSubmit = (message) => {
+    if (message.trim() === "") {
+      return;
+    }
+    const text = {
+      user: "HeadlessCoder",
+      comment: message,
+      userColor: "primary",
+    };
+    this.setState({
+      chatLog: [...this.state.chatLog, text],
+    });
   };
 
   render() {
@@ -55,18 +76,14 @@ class Stream extends React.Component {
             <ChatBox
               onScroll={this.onScroll}
               scrolledToBottom={this.state.scrolledToBottom}
-              chatLog={Array(50).fill({
-                user: "HeadlessCoder",
-                comment: "Hello World!",
-                userColor: "red-400",
-              })}
+              chatLog={this.state.chatLog}
             />
             <div
               className={`chat-actions ${
                 !this.state.scrolledToBottom ? "absolute bottom-0" : ""
               } w-full `}
             >
-              <ChatBoxActions />
+              <ChatBoxActions onSubmit={this.onSubmit} />
             </div>
           </div>
         </div>

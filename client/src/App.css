@@ -12,17 +12,12 @@ h2 {
 .content-height {
   height: calc(100vh - 3rem);
 }
-div[contenteditable] {
-  max-height: 66px;
-  overflow: auto;
+
+.chat-box-actions textarea {
+  width: 100%;
+  background-color: inherit;
 }
 
-div [contenteditable][placeholder]:empty:before {
-  content: attr(placeholder);
-  position: absolute;
-  color: gray;
-  background-color: transparent;
-}
-[contenteditable] {
+.chat-box-actions textarea:active {
   outline-color: #9147ff;
 }

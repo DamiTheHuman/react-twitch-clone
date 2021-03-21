@@ -1,13 +1,13 @@
 import React from "react";
 
 const ChatBox = ({ chatLog, onScroll, scrolledToBottom }) => {
-  /*
-   *Renders the current chat lg
-   */
+  /**
+   *Renders the current chat log
+   **/
   const renderChat = () => {
     return chatLog.map((comment, index) => {
       return (
-        <li className="py-1 px-4 " key={index}>
+        <li className="py-1 px-4 break-words" key={index}>
           <span className="chat-icons">
             <img
               src="http://via.placeholder.com/18"
