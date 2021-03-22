@@ -1,25 +1,25 @@
-.streams .stream-category-card {
+.mobile .streams .stream-category-card {
   width: 256px;
 }
 /* Tablet */
 @media only screen and (max-width: 768px) {
-  .streams .stream-category-card {
+  .mobile .streams .stream-category-card {
     width: 207px;
   }
 }
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  .streams .stream-category-card {
+  .mobile .streams .stream-category-card {
     width: 135px;
   }
 }
 
-.streams .live-stream-card .thumbnail {
+.mobile .streams .live-stream-card .thumbnail {
   width: 332px;
 }
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  .streams .live-stream-card .thumbnail {
+  .mobile .streams .live-stream-card .thumbnail {
     width: 244px;
   }
 }

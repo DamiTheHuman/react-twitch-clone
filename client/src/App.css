@@ -21,3 +21,8 @@ h2 {
 .chat-box-actions textarea:active {
   outline-color: #9147ff;
 }
+@media only screen and (max-width: 768px) {
+  .browser .force-mobile-display {
+    display: block !important;
+  }
+}

@@ -1,0 +1,27 @@
+.browser .options-dialogue {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  top: 100%;
+  transform: translate(0%, 0%);
+  width: 210px;
+  max-height: calc(100vh - 5rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 4px rgba(0, 0, 0, 0.4) !important;
+}
+.browser .options-dialogue .option-link {
+  border-radius: 5px;
+  width: 100%;
+
+  text-align: left;
+}
+.browser .options-dialogue .option-header,
+.browser .options-dialogue .option-link {
+  padding: 0.25rem.5rem;
+}
+.browser .options-dialogue .option-link:hover {
+  background-color: #f2f2f2;
+}
+
+.browser .options-dialogue hr {
+  padding-top: 0.5rem !important;
+  margin-top: 0.5rem !important;
+}

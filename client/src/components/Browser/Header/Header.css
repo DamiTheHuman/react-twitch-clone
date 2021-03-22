@@ -1,0 +1,7 @@
+.browser .main-logo {
+  transition: transform 0.25s;
+}
+
+.browser .main-logo:hover {
+  transform: translate(2.5px, -2.5px);
+}

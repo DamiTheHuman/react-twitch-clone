@@ -8,7 +8,7 @@ module.exports = {
       current: "currentColor",
       primary: "#9147ff",
       primaryV: colors.white,
-      secondary: "#3b82f6",
+      secondary: "#f2f2f2",
       secondaryV: "#53535f",
       light: "#f7f7f8",
       live: "#e91916",
