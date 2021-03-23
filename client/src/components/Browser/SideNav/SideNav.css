@@ -1,0 +1,6 @@
+.browser #sideNav {
+  transition: width 2s;
+}
+.browser #sideNav {
+  top: 3rem;
+}

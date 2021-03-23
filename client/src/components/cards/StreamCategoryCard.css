@@ -1,31 +1,24 @@
-.stream-card.live .live {
-  top: 0.75rem;
-  left: 0.75rem;
-  color: white;
+.mobile .index-category {
+  width: 256px;
 }
 
-.stream-card.live .views {
-  bottom: 0.75rem;
-  left: 0.75rem;
-  color: white;
+.browser .stream-card.category {
+  border: 0px !important;
 }
-
-.browser .stream-card.live .stream-image {
-  width: 320px;
+.browser .stream-card.category .category-image {
   transition: transform 0.25s;
 }
 
-.browser .stream-card.live .stream-image:hover {
+.browser .stream-card.category .category-image:hover {
   transform: translate(5px, -5px);
 }
-
-.browser .live-stream .card-wrapper,
-.browser .live-stream .card-wrapper-2 {
+.browser .stream-category .card-wrapper,
+.browser .stream-category .card-wrapper-2 {
   transition: opacity 0.3s;
   opacity: 0;
 }
 
-.browser .live-stream:hover .card-wrapper {
+.browser .stream-category:hover .card-wrapper {
   opacity: 1;
   top: -10px;
   background: inherit;
@@ -35,7 +28,7 @@
   clip-path: polygon(0 10px, 5px 5px, 100% 100%, 100% 100%);
 }
 
-.browser .live-stream:hover .card-wrapper-2 {
+.browser .stream-category:hover .card-wrapper-2 {
   opacity: 1;
   top: 10px;
   left: 10px;

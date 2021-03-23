@@ -29,7 +29,7 @@
       "title": "Minecraft",
       "viewers": "12K",
       "followers": "200K",
-      "tags": ["Adventure Game", "Simulation"],
+      "tags": ["Adventure"],
       "boxArt": "minecraft"
     },
     {
@@ -37,7 +37,7 @@
       "title": "Rocket League",
       "viewers": "120K",
       "followers": "1M",
-      "tags": ["Driving/Racing Game", "Action"],
+      "tags": ["Racing", "Action"],
       "boxArt": "rocket-league"
     }
   ]

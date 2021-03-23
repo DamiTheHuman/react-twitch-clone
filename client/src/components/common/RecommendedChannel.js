@@ -4,11 +4,11 @@ const RecommendedChannel = ({ stream, collapse }) => {
   return (
     <a
       href="/#"
-      className="px-2 mb-0.5 flex text-sm justify-between items-center space-x-2 items-center hover:bg-gray-300"
+      className="px-2 mb-0.5 flex text-sm justify-between items-center space-x-2 items-center hover:bg-gray-200"
     >
       {/* Streamer Avi*/}
       <img
-        src="http://via.placeholder.com/30/FF0000"
+        src="http://via.placeholder.com/30/9147FF"
         className="rounded-full"
         alt="A User"
       />

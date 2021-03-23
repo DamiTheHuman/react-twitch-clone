@@ -1,4 +1,5 @@
 import React from "react";
+import "./SideNav.css";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import VideoOutlineIcon from "mdi-react/VideoOutlineIcon";
@@ -52,7 +53,7 @@ class SideNav extends React.Component {
         id="sideNav"
         className={`${
           this.state.collapse ? "w-fit" : "xl:w-60 w-fit"
-        }justify-center	relative text-sm flex flex-col content-height bg-gray-200 py-4 overflow-y-auto`}
+        } text-sm sticky flex flex-col content-height bg-gray-100 py-4 overflow-y-auto`}
       >
         <div className="xl:flex hidden justify-center items-center px-2 mb-2">
           <div

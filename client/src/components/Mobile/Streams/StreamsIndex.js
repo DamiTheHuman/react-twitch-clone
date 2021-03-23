@@ -19,9 +19,9 @@ class StreamsIndex extends React.Component {
     }
     return this.props.categories.map((category, index) => {
       return (
-        <React.Fragment key={index}>
-          <StreamCategoryCard category={category} stretch={true} />
-        </React.Fragment>
+        <div key={index} className="index-category">
+          <StreamCategoryCard category={category} />
+        </div>
       );
     });
   };
@@ -36,7 +36,7 @@ class StreamsIndex extends React.Component {
     });
 
     return (
-      <div className="streams px-2 py-4">
+      <div className="streams-index px-2 py-4">
         {/* Title */}
         <div className="title">
           <h2 className="font-semibold sm:text-6xl text-4xl mb-2">
