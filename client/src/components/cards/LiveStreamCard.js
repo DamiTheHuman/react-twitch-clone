@@ -6,12 +6,12 @@ const LiveStreamCard = () => {
   return (
     <div className="stream-card live border w-full">
       <div className="relative thumbnail">
-        <div className="bg-gray-400 relative">
-          <Link to="/streams/1" className="bg-gray-400 live-stream">
+        <div className="hover:bg-gray-400 relative">
+          <Link to="/streams/1" className="hover:bg-gray-400 live-stream">
             <div className="card-wrapper" />
             <div className="card-wrapper-2" />
             <img
-              src="http://via.placeholder.com/332x187/000000"
+              src="http://via.placeholder.com/332x187/000000/stream"
               className="stream-image w-full h-auto"
               alt="A live Stream"
             />

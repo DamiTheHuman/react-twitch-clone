@@ -1,9 +1,9 @@
 import React from "react";
-import StreamCategoryCard from "../../cards/StreamCategoryCard";
+import CategoryCard from "../../cards/CategoryCard";
 class SuggestedCategories extends React.Component {
-  /*
+  /**
    *Render the list of categories retrieved from the server when available
-   */
+   **/
   renderCategories = () => {
     if (!this.props.categories) {
       return <div>Loading</div>;
@@ -11,7 +11,7 @@ class SuggestedCategories extends React.Component {
     return this.props.categories.map((category, index) => {
       return (
         <React.Fragment key={index}>
-          <StreamCategoryCard category={category} />
+          <CategoryCard category={category} />
         </React.Fragment>
       );
     });
@@ -19,13 +19,10 @@ class SuggestedCategories extends React.Component {
   render() {
     return (
       <div className="mb-8">
-        <h4 className="font-semibold mb-2 text-lg">
-          <a href="/#" className="text-primary">
-            Categories
-          </a>{" "}
-          channels we think you’ll like
-        </h4>
-        <div className="w-full flex space-x-2">{this.renderCategories()}</div>
+        {this.props.title}
+        <div className="w-full grid grid-cols-5 gap-2">
+          {this.renderCategories()}
+        </div>
       </div>
     );
   }

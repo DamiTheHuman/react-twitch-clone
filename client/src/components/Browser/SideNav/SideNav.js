@@ -48,17 +48,18 @@ class SideNav extends React.Component {
     }
   };
   render() {
+    const collapse = this.state.collapse;
     return (
       <div
         id="sideNav"
         className={`${
-          this.state.collapse ? "w-fit" : "xl:w-60 w-fit"
+          collapse ? "w-12 space-y-2" : "xl:w-60 w-12"
         } text-sm sticky flex flex-col content-height bg-gray-100 py-4 overflow-y-auto`}
       >
         <div className="xl:flex hidden justify-center items-center px-2 mb-2">
           <div
             className={`${
-              this.state.collapse ? "hidden" : "xl:flex hidden"
+              collapse ? "hidden" : "xl:flex hidden"
             } text-xs font-semibold flex-grow`}
           >
             RECOMMENDED CHANNELS
@@ -67,20 +68,22 @@ class SideNav extends React.Component {
         </div>
         <div
           className={`${
-            this.state.collapse ? "xl:flex hidden" : "flex xl:hidden"
+            collapse ? "xl:flex hidden" : "flex xl:hidden"
           } justify-center px-2 mb-2 w-full force-mobile-display`}
         >
           <VideoOutlineIcon size={24} />
         </div>
-        {/* Render Active Streams*/}
-        {this.renderActiveStreams()}
-
-        {/* Join the Twitch Community*/}
         <div
           className={`${
-            this.state.collapse ? "hidden" : "xl:flex hidden"
-          } px-2 mt-4`}
+            collapse ? "space-y-3" : "space-y-3 xl:space-y-0"
+          } flex flex-col justify-center items-center`}
         >
+          {/* Render Active Streams*/}
+          {this.renderActiveStreams()}
+        </div>
+
+        {/* Join the Twitch Community*/}
+        <div className={`${collapse ? "hidden" : "xl:flex hidden"} px-2 mt-4`}>
           <div className="bg-white px-4 py-6 rounded">
             <h4 className="text-xl mb-2 font-semibold">
               Join the <span className="text-primary">Twitch</span> Community

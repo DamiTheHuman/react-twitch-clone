@@ -8,7 +8,7 @@ class SuggestedStreams extends React.Component {
       .slice(0, !this.state.showMore ? 3 : 6)
       .map((stream, index) => {
         return (
-          <div className="w-max" key={index}>
+          <div key={index}>
             <LiveStreamCard />
           </div>
         );
@@ -38,7 +38,7 @@ class SuggestedStreams extends React.Component {
     return (
       <div className="stream-recommendations mb-8">
         {this.props.title}
-        <div className="grid grid-cols-3 gap-8 mb-2">
+        <div className="grid grid-cols-3 gap-2 mb-2">
           {this.renderLiveStreams()}
         </div>
         {this.renderShowMore()}

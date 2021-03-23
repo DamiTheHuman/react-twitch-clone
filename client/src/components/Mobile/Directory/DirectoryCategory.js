@@ -1,9 +1,9 @@
 import React from "react";
 import Pill from "../../common/Pill";
 import LiveStreamCard from "../../cards/LiveStreamCard";
-import { fetchCategory } from "../../../actions/";
+import { fetchCategory } from "../../../actions";
 import { connect } from "react-redux";
-class StreamsBrowseCategory extends React.Component {
+class DirectoryCategory extends React.Component {
   componentDidMount() {
     this.props.fetchCategory(this.props.match.params.id);
   }
@@ -69,6 +69,4 @@ class StreamsBrowseCategory extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return { category: state.categories[ownProps.match.params.id] };
 };
-export default connect(mapStateToProps, { fetchCategory })(
-  StreamsBrowseCategory
-);
+export default connect(mapStateToProps, { fetchCategory })(DirectoryCategory);

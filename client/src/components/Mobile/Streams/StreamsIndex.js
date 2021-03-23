@@ -3,7 +3,7 @@ import "./StreamsIndex.css";
 import { fetchCategories } from "../../../actions/";
 import { connect } from "react-redux";
 import LiveStreamCard from "../../cards/LiveStreamCard";
-import StreamCategoryCard from "../../cards/StreamCategoryCard";
+import CategoryCard from "../../cards/CategoryCard";
 import ScrollableContent from "../../common/ScrollableContent";
 
 class StreamsIndex extends React.Component {
@@ -20,7 +20,7 @@ class StreamsIndex extends React.Component {
     return this.props.categories.map((category, index) => {
       return (
         <div key={index} className="index-category">
-          <StreamCategoryCard category={category} />
+          <CategoryCard category={category} />
         </div>
       );
     });

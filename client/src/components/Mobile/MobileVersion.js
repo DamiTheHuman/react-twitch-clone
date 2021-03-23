@@ -2,8 +2,8 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import MiniHeader from "./Header/MiniHeader";
 import StreamsIndex from "./Streams/StreamsIndex";
-import StreamsBrowse from "./StreamsBrowse/StreamsBrowse";
-import StreamsBrowseCategory from "./StreamsBrowse/StreamsBrowseCategory";
+import Directory from "./Directory/Directory";
+import DirectoryCategory from "./Directory/DirectoryCategory";
 import Stream from "./Streams/Stream";
 
 const MobileVersion = () => {
@@ -13,10 +13,10 @@ const MobileVersion = () => {
       <div className="mt-12 min-content-height">
         <Switch>
           <Route path="/" component={StreamsIndex} exact />
-          <Route path="/directory" component={StreamsBrowse} exact />
+          <Route path="/directory" component={Directory} exact />
           <Route
             path="/directory/game/:id"
-            component={StreamsBrowseCategory}
+            component={DirectoryCategory}
             exact
           />
           <Route path="/streams/:id" component={Stream} exact />
