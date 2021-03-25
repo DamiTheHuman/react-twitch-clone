@@ -2,10 +2,6 @@
   padding: 0% 1%;
 }
 
-h2 {
-  /*  font-size: 3.375rem;*/
-}
-
 .min-content-height {
   min-height: calc(100vh - 3rem);
 }
@@ -21,14 +17,29 @@ h2 {
 .chat-box-actions textarea:active {
   outline-color: #9147ff;
 }
-@media only screen and (max-width: 768px) {
-  .browser .force-mobile-display {
-    display: block !important;
-  }
-}
 
-.live {
+.card .align-t-l {
   top: 0.75rem;
   left: 0.75rem;
   color: white;
+}
+
+.card .align-b-l {
+  bottom: 0.75rem;
+  left: 0.75rem;
+  color: white;
+}
+
+.card .align-t-r {
+  bottom: 0.75rem;
+  right: 0.75rem;
+  color: white;
+}
+.card-text-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 0.4rem;
+}
+.mobile .card {
+  border-width: 1px;
 }

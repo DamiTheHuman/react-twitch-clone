@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
-import "./LiveStreamCard.css";
-const LiveStreamCard = () => {
+const VideoCard = () => {
   return (
-    <div className="live-card card border w-full">
+    <div className="clip-card card border w-full">
       <div className="relative text-sm">
         <div className="card-main hover:bg-gray-400 relative">
           <Link to="/streams/1" className="hover:bg-gray-400">
@@ -16,11 +15,14 @@ const LiveStreamCard = () => {
                 className="w-full h-auto"
                 alt="A live Stream"
               />
-              <div className="card-text-overlay bg-red-600 px-1  rounded absolute align-t-l">
-                <p className="font-semibold">LIVE</p>
+              <div className="card-text-overlay align-t-l">
+                <p>3:52:34</p>
               </div>
-              <div className="card-text-overlay bg-none absolute align-b-l">
-                <p>223K Views</p>
+              <div className="card-text-overlay align-b-l">
+                <p>22K Views</p>
+              </div>
+              <div className="card-text-overlay align-t-r">
+                <p>7 Days Ago</p>
               </div>
             </div>
           </Link>
@@ -48,4 +50,4 @@ const LiveStreamCard = () => {
   );
 };
 
-export default LiveStreamCard;
+export default VideoCard;

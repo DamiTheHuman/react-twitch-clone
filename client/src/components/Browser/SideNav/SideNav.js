@@ -53,7 +53,7 @@ class SideNav extends React.Component {
       <div
         id="sideNav"
         className={`${
-          collapse ? "w-12 space-y-2" : "xl:w-60 w-12"
+          collapse ? "w-14 space-y-2" : "xl:w-60 w-14"
         } text-sm sticky flex flex-col content-height bg-gray-100 py-4 overflow-y-auto`}
       >
         <div className="xl:flex hidden justify-center items-center px-2 mb-2">
@@ -74,9 +74,9 @@ class SideNav extends React.Component {
           <VideoOutlineIcon size={24} />
         </div>
         <div
-          className={`${
-            collapse ? "space-y-3" : "space-y-3 xl:space-y-0"
-          } flex flex-col justify-center items-center`}
+          className={`flex flex-col ${
+            collapse ? "space-y-1" : "space-y-1 xl:space-y-0"
+          }`}
         >
           {/* Render Active Streams*/}
           {this.renderActiveStreams()}

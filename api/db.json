@@ -3,6 +3,7 @@
     {
       "id": 0,
       "title": "Just Chatting",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla malesuada pellentesque elit eget.",
       "viewers": "509K",
       "followers": "1M",
       "tags": ["IRL"],
@@ -11,6 +12,7 @@
     {
       "id": 1,
       "title": "Fortnite",
+      "description": "Fortnite is the living, action building game from the developer formerly known as Epic MegaGames. You and your friends will lead a group of Heroes to reclaim and rebuild a homeland that has been left empty by mysterious darkness only known as 'the Storm'. Band together online to build extravagant forts, find or build insane weapons and traps and protect your towns from the strange monsters that emerge during the Storm. In an action experience from the only company smart enough to attach chainsaws to guns, get out there to push back the Storm and save the world. And don't forget to loot all the things.",
       "viewers": "12K",
       "followers": "3M",
       "tags": ["Shooter", "Action"],
@@ -19,6 +21,7 @@
     {
       "id": 2,
       "title": "Among Us",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla malesuada pellentesque elit eget.",
       "viewers": "12K",
       "followers": "1K",
       "tags": ["Strategy", "Survival"],
@@ -27,6 +30,7 @@
     {
       "id": 3,
       "title": "Minecraft",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla malesuada pellentesque elit eget.",
       "viewers": "12K",
       "followers": "200K",
       "tags": ["Adventure"],
@@ -35,6 +39,7 @@
     {
       "id": 4,
       "title": "Rocket League",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla malesuada pellentesque elit eget.",
       "viewers": "120K",
       "followers": "1M",
       "tags": ["Racing", "Action"],

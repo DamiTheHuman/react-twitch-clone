@@ -1,4 +1,5 @@
 import React from "react";
+import "./MobileVersion.css";
 import { Switch, Route } from "react-router-dom";
 import MiniHeader from "./Header/MiniHeader";
 import StreamsIndex from "./Streams/StreamsIndex";

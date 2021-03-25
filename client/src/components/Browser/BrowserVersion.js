@@ -1,6 +1,8 @@
 import React from "react";
+import "./BrowserVersion.css";
 import { Switch, Route } from "react-router-dom";
 import Directory from "./Directory/Directory";
+import DirectoryGame from "./Directory/DirectoryGame";
 import Header from "./Header/Header";
 import SideNav from "./SideNav/SideNav";
 import StreamsIndex from "./Streams/StreamsIndex";
@@ -13,8 +15,9 @@ const BrowserVersion = () => {
         <div>
           <SideNav />
         </div>
-        <Switch>
-          <div className="flex-grow relative bg-white">
+
+        <div className="flex-grow relative bg-white">
+          <Switch>
             <Route path="/" component={StreamsIndex} exact />
             <Route path="/directory" component={Directory} exact />
             <Route
@@ -22,8 +25,14 @@ const BrowserVersion = () => {
               render={(props) => <Directory {...props} loadCategories={true} />}
               exact
             />
-          </div>
-        </Switch>
+            <Route
+              path="/directory/game/:id"
+              render={(props) => (
+                <DirectoryGame {...props} loadCategories={true} />
+              )}
+            />
+          </Switch>
+        </div>
       </div>
     </div>
   );

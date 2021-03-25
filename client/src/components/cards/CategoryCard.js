@@ -12,20 +12,24 @@ const CategoryCard = ({ category, stretch }) => {
     );
   });
   return (
-    <div className={`stream-card category border ${stretch ? "w-max" : ""} `}>
-      <div className="hover:bg-primary relative">
-        <Link
-          to={`/directory/game/${category.id}`}
-          className="hover:bg-primary stream-category"
-        >
-          <div className="card-wrapper" />
-          <div className="card-wrapper-2" />
-          <img
-            src={`http://localhost:3000/categories/${category.boxArt}.jpg`}
-            className="w-full h-auto category-image cursor-pointer"
-            alt="A new Game"
-          />
-        </Link>
+    <div className={`category-card card border ${stretch ? "w-max" : ""} `}>
+      <div className="relative">
+        <div className="card-main hover:bg-primary relative">
+          <Link
+            to={`/directory/game/${category.id}`}
+            className="hover:bg-primary stream-category"
+          >
+            <div className="card-wrapper" />
+            <div className="card-wrapper-2" />
+            <div className="thumbnail">
+              <img
+                src={`http://localhost:3000/categories/${category.boxArt}.jpg`}
+                className="w-full h-auto category-image cursor-pointer"
+                alt="A new Game"
+              />
+            </div>
+          </Link>
+        </div>
       </div>
       <div className="card-content px-2 py-2">
         <h5 className="text-sm font-semibold">{category.title}</h5>
