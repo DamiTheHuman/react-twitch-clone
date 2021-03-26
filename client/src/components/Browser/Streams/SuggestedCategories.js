@@ -18,9 +18,9 @@ class SuggestedCategories extends React.Component {
   };
   render() {
     return (
-      <div className="mb-8">
+      <div className="mb-6 border-b">
         {this.props.title}
-        <div className="w-full grid grid-cols-5 gap-2">
+        <div className="w-full flex space-x-2 space-y-2">
           {this.renderCategories()}
         </div>
       </div>

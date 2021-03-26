@@ -1,6 +1,12 @@
 .directory-type .icon {
-  max-height: 60px;
-  transform: translate(0, -30%);
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(0, -34%);
+}
+.directory-type {
+  height: 3.5rem !important;
 }
 
 .directory-type.games {

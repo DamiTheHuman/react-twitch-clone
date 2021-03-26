@@ -28,12 +28,12 @@ const ChatBox = ({ chatLog, onScroll, scrolledToBottom }) => {
     <div className="chat-box-text text-sm h-full relative">
       <div className="overflow-hidden flex-grow">
         <div
-          className="scrollable overflow-auto absolute h-full w-full"
+          className="scrollable overflow-auto h-full w-full"
           onScroll={(event) => {
             onScroll(event.target);
           }}
         >
-          <ul className={`${!scrolledToBottom ? "pb-14" : ""}`}>
+          <ul className={`${!scrolledToBottom ? "" : ""}`}>
             <li className=" px-4 py-1 text-gray-900">
               Welcome to the chat room!
             </li>

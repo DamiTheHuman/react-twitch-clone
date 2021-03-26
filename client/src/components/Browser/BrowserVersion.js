@@ -6,6 +6,7 @@ import DirectoryGame from "./Directory/DirectoryGame";
 import Header from "./Header/Header";
 import SideNav from "./SideNav/SideNav";
 import StreamsIndex from "./Streams/StreamsIndex";
+import Stream from "./Streams/Stream";
 
 const BrowserVersion = () => {
   return (
@@ -31,6 +32,7 @@ const BrowserVersion = () => {
                 <DirectoryGame {...props} loadCategories={true} />
               )}
             />
+            <Route path="/streams/:id" component={Stream} />
           </Switch>
         </div>
       </div>

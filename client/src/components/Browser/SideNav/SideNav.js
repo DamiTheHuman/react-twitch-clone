@@ -31,6 +31,7 @@ class SideNav extends React.Component {
           onClick={() => {
             this.setState({ collapse: false });
           }}
+          className="px-1.5 py-2 hover:bg-gray-200 rounded"
         >
           <ArrowCollapseRightIcon size={16} />
         </button>
@@ -41,6 +42,7 @@ class SideNav extends React.Component {
           onClick={() => {
             this.setState({ collapse: true });
           }}
+          className="px-1.5 py-2 hover:bg-gray-200 rounded"
         >
           <ArrowCollapseLeftIcon size={16} />
         </button>
@@ -54,13 +56,13 @@ class SideNav extends React.Component {
         id="sideNav"
         className={`${
           collapse ? "w-14 space-y-2" : "xl:w-60 w-14"
-        } text-sm sticky flex flex-col content-height bg-gray-100 py-4 overflow-y-auto`}
+        } text-sm sticky content-height flex flex-col bg-gray-100 py-4 overflow-y-auto`}
       >
         <div className="xl:flex hidden justify-center items-center px-2 mb-2">
           <div
             className={`${
               collapse ? "hidden" : "xl:flex hidden"
-            } text-xs font-semibold flex-grow`}
+            } text-xs font  -semibold flex-grow`}
           >
             RECOMMENDED CHANNELS
           </div>

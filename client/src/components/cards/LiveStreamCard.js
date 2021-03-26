@@ -4,7 +4,7 @@ import Pill from "../common/Pill";
 import "./LiveStreamCard.css";
 const LiveStreamCard = () => {
   return (
-    <div className="live-card card border w-full">
+    <div className="live-card card w-full">
       <div className="relative text-sm">
         <div className="card-main hover:bg-gray-400 relative">
           <Link to="/streams/1" className="hover:bg-gray-400">

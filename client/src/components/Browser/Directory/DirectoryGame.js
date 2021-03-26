@@ -77,8 +77,8 @@ class DirectoryGame extends React.Component {
    *This is based on if the user is on the /all url or not
    **/
   renderDirectoryContent = () => {
+    var streams = [0, 1, 2, 3, 4, 5];
     if (this.props.type === 0) {
-      var streams = [0, 1, 2, 3, 4, 5];
       const liveStreams = streams.map((stream, index) => {
         return (
           <div key={index}>
@@ -88,7 +88,6 @@ class DirectoryGame extends React.Component {
       });
       return <div className="grid grid-cols-3 gap-4">{liveStreams}</div>;
     } else if (this.props.type === 1) {
-      var streams = [0, 1, 2, 3, 4, 5];
       const videos = streams.map((stream, index) => {
         return (
           <div key={index}>
@@ -98,7 +97,6 @@ class DirectoryGame extends React.Component {
       });
       return <div className="grid grid-cols-3 gap-4">{videos}</div>;
     } else if (this.props.type === 2) {
-      var streams = [0, 1, 2, 3, 4, 5];
       const clips = streams.map((stream, index) => {
         return (
           <div key={index}>

@@ -12,7 +12,7 @@ const CategoryCard = ({ category, stretch }) => {
     );
   });
   return (
-    <div className={`category-card card border ${stretch ? "w-max" : ""} `}>
+    <div className={`category-card card ${stretch ? "w-max" : ""} `}>
       <div className="relative">
         <div className="card-main hover:bg-primary relative">
           <Link
