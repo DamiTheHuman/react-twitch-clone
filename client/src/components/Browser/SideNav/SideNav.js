@@ -1,5 +1,7 @@
 import React from "react";
 import "./SideNav.css";
+import { fetchStreams } from "../../../actions/index";
+import { connect } from "react-redux";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import VideoOutlineIcon from "mdi-react/VideoOutlineIcon";
@@ -7,22 +9,23 @@ import RecommendedChannel from "../../common/RecommendedChannel";
 class SideNav extends React.Component {
   state = {
     collapse: false,
-    activeStreams: Array(10).fill({
-      user: "HeadlessCoder",
-      game: "React",
-      views: "196K",
-    }),
   };
+  componentDidMount() {
+    const query = "?_expand=user&_sort=views&_order=desc";
+    this.props.fetchStreams(query);
+  }
   renderActiveStreams = () => {
-    return this.state.activeStreams.map((stream, index) => {
-      return (
-        <RecommendedChannel
-          stream={stream}
-          key={index}
-          collapse={this.state.collapse}
-        />
-      );
-    });
+    if (this.props.streams) {
+      return this.props.streams.map((stream, index) => {
+        return (
+          <RecommendedChannel
+            stream={stream}
+            key={index}
+            collapse={this.state.collapse}
+          />
+        );
+      });
+    }
   };
   renderCollapseButton = () => {
     if (this.state.collapse) {
@@ -31,7 +34,7 @@ class SideNav extends React.Component {
           onClick={() => {
             this.setState({ collapse: false });
           }}
-          className="px-1.5 py-2 hover:bg-gray-200 rounded"
+          className="rounded px-1.5 py-2 hover:bg-gray-200"
         >
           <ArrowCollapseRightIcon size={16} />
         </button>
@@ -100,4 +103,7 @@ class SideNav extends React.Component {
     );
   }
 }
-export default SideNav;
+const mapStateToProps = (state) => {
+  return { streams: Object.values(state.streams) };
+};
+export default connect(mapStateToProps, { fetchStreams })(SideNav);

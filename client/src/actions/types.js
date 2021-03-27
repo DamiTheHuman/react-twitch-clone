@@ -7,3 +7,8 @@ export const FETCH_STREAM = "FETCH_STREAM";
 export const DELETE_STREAM = "DELETE_STREAM";
 export const EDIT_STREAM = "_STREAM";
 */
+export const FETCH_STREAM = "FETCH_STREAM";
+export const FETCH_STREAMS = "FETCH_STREAMS";
+
+export const FETCH_USERS = "FETCH_USERS";
+export const FETCH_USER = "FETCH_USER";

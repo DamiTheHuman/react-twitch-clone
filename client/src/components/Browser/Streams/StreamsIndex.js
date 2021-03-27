@@ -24,7 +24,6 @@ class StreamsIndex extends React.Component {
               Live channels we think you’ll like
             </h4>
           }
-          streams={streams}
         />
         {/*Directories*/}
         <DirectoryCardList />
@@ -50,7 +49,7 @@ class StreamsIndex extends React.Component {
               channels
             </h4>
           }
-          streams={streams}
+          game="Minecraft"
         />
       </div>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchCategories } from "../../../actions/";
+import { fetchCategories, fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
 import LiveStreamCard from "../../cards/LiveStreamCard";
 import CategoryCard from "../../cards/CategoryCard";
@@ -11,6 +11,9 @@ class Directory extends React.Component {
   componentDidMount() {
     if (!this.props.loadCategories) {
       this.props.fetchCategories();
+    } else {
+      var query = "?_expand=user&_sort=views&_order=desc";
+      this.props.fetchStreams(query);
     }
   }
 
@@ -19,17 +22,16 @@ class Directory extends React.Component {
    *This is based on if the user is on the /all url or not
    **/
   renderDirectoryContent = () => {
-    if (this.props.loadCategories) {
-      var streams = [0, 1, 2, 3, 4, 5];
-      const liveStreams = streams.map((stream, index) => {
+    if (this.props.streams && this.props.loadCategories) {
+      const liveStreams = this.props.streams.map((stream, index) => {
         return (
           <div key={index}>
-            <LiveStreamCard />
+            <LiveStreamCard stream={stream} />
           </div>
         );
       });
-      return <div class="grid grid-cols-3 gap-4">{liveStreams}</div>;
-    } else {
+      return <div className="grid grid-cols-3 gap-4">{liveStreams}</div>;
+    } else if (this.props.categories) {
       const categories = this.props.categories.map((category, index) => {
         return (
           <div key={index}>
@@ -37,7 +39,7 @@ class Directory extends React.Component {
           </div>
         );
       });
-      return <div class="grid grid-cols-5 gap-4">{categories}</div>;
+      return <div className="grid grid-cols-5 gap-4">{categories}</div>;
     }
   };
   render() {
@@ -67,7 +69,12 @@ class Directory extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { categories: Object.values(state.categories) };
+  return {
+    categories: Object.values(state.categories),
+    streams: Object.values(state.streams),
+  };
 };
 
-export default connect(mapStateToProps, { fetchCategories })(Directory);
+export default connect(mapStateToProps, { fetchCategories, fetchStreams })(
+  Directory
+);

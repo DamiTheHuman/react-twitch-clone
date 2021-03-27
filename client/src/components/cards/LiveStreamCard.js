@@ -1,13 +1,27 @@
 import React from "react";
+import { numberFormatter } from "../../apis/general";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
 import "./LiveStreamCard.css";
-const LiveStreamCard = () => {
+const LiveStreamCard = ({ stream }) => {
+  if (!stream) {
+    return <div>NO STREAM PASSED</div>;
+  }
+  const renderPills = stream.tags.map((tag) => {
+    return (
+      <React.Fragment key={tag}>
+        <Pill content={tag} />
+      </React.Fragment>
+    );
+  });
   return (
     <div className="live-card card w-full">
       <div className="relative text-sm">
-        <div className="card-main hover:bg-gray-400 relative">
-          <Link to="/streams/1" className="hover:bg-gray-400">
+        <div className={`hover:bg-${stream.user.color}-400 card-main relative`}>
+          <Link
+            to={`/streams/${stream.id}`}
+            className={`hover:bg-${stream.user.color}-400`}
+          >
             <div className="card-wrapper" />
             <div className="card-wrapper-2" />
             <div className="thumbnail">
@@ -20,7 +34,7 @@ const LiveStreamCard = () => {
                 <p className="font-semibold">LIVE</p>
               </div>
               <div className="card-text-overlay bg-none absolute align-b-l">
-                <p>223K Views</p>
+                <p>{numberFormatter(stream.views)} Views</p>
               </div>
             </div>
           </Link>
@@ -35,12 +49,11 @@ const LiveStreamCard = () => {
           />
         </div>
         <div className="stream-details text-sm text-black">
-          <h5 className="font-semibold">Discussing AI</h5>
-          <p>Headless Coder</p>
+          <h5 className="font-semibold">{stream.title}</h5>
+          <p>{stream.user.userName}</p>
           {/* Pills*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
-            <Pill content="Action" />
-            <Pill content="Multiplayer" />
+            {renderPills}
           </div>
         </div>
       </div>

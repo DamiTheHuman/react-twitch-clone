@@ -1,5 +1,7 @@
 import React from "react";
-import { fetchCategory } from "../../../actions/";
+import _ from "lodash";
+import streams from "../../../apis/streams";
+import { fetchCategoryByTitle } from "../../../actions/";
 import { connect } from "react-redux";
 import Pill from "../../common/Pill";
 import CircleMediumIcon from "mdi-react/CircleMediumIcon";
@@ -12,9 +14,19 @@ import DirectoryLink from "./DirectoryLink";
 import ClipCard from "../../cards/ClipCard";
 
 class DirectoryGame extends React.Component {
+  state = { streams: null };
   componentDidMount() {
-    this.props.fetchCategory(this.props.match.params.id);
+    this.props.fetchCategoryByTitle(this.props.match.params.id);
+    this.fetchStreams();
   }
+  fetchStreams = async () => {
+    if (this.props.match.params.id) {
+      const query = `?_expand=user&game=${this.props.match.params.id}&_sort=views&_order=asc`;
+      const response = await streams.get(`/streams/${query}`);
+
+      this.setState({ streams: response.data });
+    }
+  };
 
   renderCategory = () => {
     if (!this.props.category) {
@@ -78,11 +90,14 @@ class DirectoryGame extends React.Component {
    **/
   renderDirectoryContent = () => {
     var streams = [0, 1, 2, 3, 4, 5];
-    if (this.props.type === 0) {
-      const liveStreams = streams.map((stream, index) => {
+    if (this.props.type === 0 && this.state.streams) {
+      if (this.state.streams.length === 0) {
+        return <div className="text-xl font-semibold">No results found</div>;
+      }
+      const liveStreams = this.state.streams.map((stream, index) => {
         return (
           <div key={index}>
-            <LiveStreamCard />
+            <LiveStreamCard stream={stream} />
           </div>
         );
       });
@@ -119,19 +134,19 @@ class DirectoryGame extends React.Component {
         {this.renderCategory()}
         <div className="flex space-x-4 font-semibold text-lg mb-4">
           <DirectoryLink
-            to={`/directory/game/${this.props.category.id}`}
+            to={`/directory/game/${this.props.category.title}`}
             active={this.props.type === 0}
           >
             <p>Live Channels</p>
           </DirectoryLink>
           <DirectoryLink
-            to={`/directory/game/${this.props.category.id}/videos`}
+            to={`/directory/game/${this.props.category.title}/videos`}
             active={this.props.type === 1}
           >
             <p>Videos</p>
           </DirectoryLink>
           <DirectoryLink
-            to={`/directory/game/${this.props.category.id}/clips`}
+            to={`/directory/game/${this.props.category.title}/clips`}
             active={this.props.type === 2}
           >
             <p>Clips</p>
@@ -160,9 +175,14 @@ const mapStateToProps = (state, ownProps) => {
         return 0;
     }
   };
+  const category = _.find(state.categories, function (category) {
+    return category.title === ownProps.match.params.id;
+  });
   return {
-    category: state.categories[ownProps.match.params.id],
+    category: category,
     type: getActiveLink(path[path.length - 1]),
   };
 };
-export default connect(mapStateToProps, { fetchCategory })(DirectoryGame);
+export default connect(mapStateToProps, { fetchCategoryByTitle })(
+  DirectoryGame
+);

@@ -16,7 +16,7 @@ const CategoryCard = ({ category, stretch }) => {
       <div className="relative">
         <div className="card-main hover:bg-primary relative">
           <Link
-            to={`/directory/game/${category.id}`}
+            to={`/directory/game/${category.title}`}
             className="hover:bg-primary stream-category"
           >
             <div className="card-wrapper" />

@@ -15,7 +15,7 @@ const ChatBox = ({ chatLog, onScroll, scrolledToBottom }) => {
               alt="icon"
             />
           </span>
-          <span className={`chat-user text-${comment.userColor}`}>
+          <span className={`chat-user text-${comment.userColor}-400`}>
             {comment.user}
           </span>
           <span> : </span>

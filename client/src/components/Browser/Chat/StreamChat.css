@@ -1,0 +1,12 @@
+.browser #stream-chat {
+  transition: width 0.15s;
+}
+.browser #stream-chat {
+  top: 3rem;
+}
+
+.browser .collapsed-button {
+  position: fixed;
+  color: white;
+  right: 0.75rem;
+}

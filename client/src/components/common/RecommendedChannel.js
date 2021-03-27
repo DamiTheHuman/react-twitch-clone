@@ -1,15 +1,16 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { numberFormatter } from "../../apis/general";
 const RecommendedChannel = ({ stream, collapse }) => {
   return (
-    <a
-      href="/#"
+    <Link
+      to={`/streams/${stream.id}`}
       className="px-2 pb-1 flex text-sm items-center space-x-2 hover:bg-gray-200"
     >
       {/* Streamer Avi*/}
       <img
         src="http://via.placeholder.com/30/9147FF"
-        className="rounded-full border-4 border-red-200 p-0.5"
+        className={`border-${stream.user.color}-400 rounded-full border-2 p-0.5`}
         alt="A User"
       />
       {/* Stream Details*/}
@@ -20,7 +21,7 @@ const RecommendedChannel = ({ stream, collapse }) => {
       >
         <div className="flex space-x-2 w-full">
           <div className="flex-grow">
-            <p className="font-semibold">{stream.user}</p>
+            <p className="font-semibold">{stream.user.userName}</p>
           </div>
           {/* Streamer Views*/}
           <div
@@ -29,12 +30,12 @@ const RecommendedChannel = ({ stream, collapse }) => {
             } "flex space-x-1 items-center self-start"`}
           >
             <div className="rounded-full bg-live h-2 w-2" />
-            <div>{stream.views}</div>
+            <div>{numberFormatter(stream.views)}</div>
           </div>
         </div>
         <p>{stream.game}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 export default RecommendedChannel;
