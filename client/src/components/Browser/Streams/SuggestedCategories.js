@@ -1,5 +1,9 @@
 import React from "react";
 import CategoryCard from "../../cards/CategoryCard";
+/**
+ * @ref @BrowserVersion
+ * Suggested categories for the browser page
+ */
 class SuggestedCategories extends React.Component {
   /**
    *Render the list of categories retrieved from the server when available

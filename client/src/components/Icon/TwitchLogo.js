@@ -1,5 +1,8 @@
 import React from "react";
 import "./TwitchLogo.css";
+/**
+ * An SVG for the main twtich logo
+ **/
 const TwitchLogo = ({ className, fill, children }) => {
   return (
     <div className={className}>

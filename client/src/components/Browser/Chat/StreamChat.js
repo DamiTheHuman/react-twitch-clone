@@ -8,7 +8,10 @@ import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
 import GiftIcon from "mdi-react/GiftIcon";
 import StreamChatActions from "./StreamChatActions";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
-
+/**
+ * @ref @BrowserVersion
+ * Manages the stream chat
+ */
 class StreamChat extends React.Component {
   state = {
     collapse: false,
@@ -19,12 +22,21 @@ class StreamChat extends React.Component {
       userColor: "blue",
     }),
   };
+  /**
+   * When the visible stream chat is collapsed
+   */
   onStreamChatCollapse = () => {
     this.setState({ collapse: true });
   };
+  /**
+   * When the collapsed stream chat is revealed
+   */
   onStreamChatReveal = () => {
     this.setState({ collapse: false });
   };
+  /**
+   * When a new message is submitted from the form
+   */
   onFormSubmit = (message) => {
     if (message.trim() === "") {
       return;
@@ -38,6 +50,9 @@ class StreamChat extends React.Component {
       chatLog: [...this.state.chatLog, text],
     });
   };
+  /**
+   * When the button is rendered unto the screen
+   */
   renderButton = () => {
     if (this.state.collapse) {
       return (

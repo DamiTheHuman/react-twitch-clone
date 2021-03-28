@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { numberFormatter } from "../../apis/general";
+/**
+ * A data button for recommended channels
+ **/
 const RecommendedChannel = ({ stream, collapse }) => {
   return (
     <Link

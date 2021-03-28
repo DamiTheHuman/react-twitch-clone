@@ -6,7 +6,9 @@ import StreamsIndex from "./Streams/StreamsIndex";
 import Directory from "./Directory/Directory";
 import DirectoryCategory from "./Directory/DirectoryCategory";
 import Stream from "./Streams/Stream";
-
+/**
+ * The mobile version of the application
+ */
 const MobileVersion = () => {
   return (
     <div className="mobile">

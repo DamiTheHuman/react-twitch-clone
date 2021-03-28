@@ -5,7 +5,8 @@ import MusicIcon from "../../../assets/icons/music-icon.svg";
 import EsportsIcon from "../../../assets/icons/esports-icon.svg";
 import DirectoryCard from "./DirectoryCard";
 /**
- * A component which renders the directoryc ard List
+ * @ref @BrowserVersion
+ * Renders the set directry list and their respective icons
  **/
 const DirectoryCardList = () => {
   /**

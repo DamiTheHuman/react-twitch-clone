@@ -1,5 +1,7 @@
 import React from "react";
-
+/**
+ * Manages the actions for the chatbox
+ **/
 class ChatBoxActions extends React.Component {
   state = { message: "" };
   componentDidMount() {
@@ -10,6 +12,9 @@ class ChatBoxActions extends React.Component {
     var textarea = document.querySelector("textarea");
     textarea.removeEventListener("keydown", this.resizeTextArea);
   }
+  /**
+   * Resize the text area based on how much the user has typed
+   **/
   resizeTextArea = () => {
     var el = document.querySelector("#growable-textarea");
     setTimeout(function () {

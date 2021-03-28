@@ -1,10 +1,10 @@
 import React from "react";
-
-/*import ChatBoxActions from "../../ChatBox/ChatBoxActions";*/
-/*import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";*/
 import StreamerInfo from "../../cards/StreamerInfo";
 import StreamChat from "../Chat/StreamChat";
-
+/**
+ * @ref @BrowserVersion
+ * A Singular componenet displayed to the user
+ */
 class Stream extends React.Component {
   componentDidMount() {
     var textarea = document.querySelector("textarea");
@@ -14,7 +14,10 @@ class Stream extends React.Component {
     var textarea = document.querySelector("textarea");
     textarea.removeEventListener("keydown", this.resizeTextArea);
   }
-
+  /**
+   * Resizes the text area based on the lines writtien in the text area
+   * A max height is set on this so it doesnt exceed 4 lines via css
+   **/
   resizeTextArea = () => {
     var el = document.querySelector("#growable-textarea");
     setTimeout(function () {
@@ -22,36 +25,6 @@ class Stream extends React.Component {
       el.style.cssText = "height:" + el.scrollHeight + "px";
     }, 0);
   };
-
-  /*
-   *Checks if the user has scrolled to the bottom of the chat
-   */
-  onScroll = (el) => {
-    if (this.state.scrolledToBottom === false) {
-      if (el.scrollHeight - el.scrollTop - el.clientHeight < 1) {
-        this.setState({ scrolledToBottom: true }, () => {
-          el.scrollTop = el.scrollHeight + 16; //Scroll to the bottom of the chat
-        });
-      }
-    } else if (el.scrollHeight - el.scrollTop - el.clientHeight > 1) {
-      this.setState({ scrolledToBottom: false });
-    }
-  };
-
-  onSubmit = (message) => {
-    if (message.trim() === "") {
-      return;
-    }
-    const text = {
-      user: "Anonymous",
-      comment: message,
-      userColor: "primary",
-    };
-    this.setState({
-      chatLog: [...this.state.chatLog, text],
-    });
-  };
-
   render() {
     return (
       <div className="stream min-content-height flex">

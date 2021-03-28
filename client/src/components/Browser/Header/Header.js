@@ -8,6 +8,10 @@ import TwitchLogo from "../../Icon/TwitchLogo";
 import HeaderOptions from "./HeaderOptions";
 import SearchBar from "../../common/SearchBar";
 
+/**
+ * @ref @BrowserVersion
+ * The main header for the browser component
+ */
 class Header extends React.Component {
   state = { options: false };
   /** Sets the value for the toggle option*/

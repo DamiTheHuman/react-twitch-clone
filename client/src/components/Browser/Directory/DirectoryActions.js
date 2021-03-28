@@ -1,5 +1,9 @@
 import React from "react";
 import SearchIcon from "mdi-react/SearchIcon";
+/**
+ * @ref @BrowserVersion
+ * Manages the search and filtering operations of the streams
+ */
 const DirectoryActions = ({ loadCategories }) => {
   /**
    *Renders the search bar

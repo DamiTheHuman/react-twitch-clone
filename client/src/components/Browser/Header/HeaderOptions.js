@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./HeaderOptions.css";
-
+/**
+ * @ref @BrowserVersion
+ * Header options for the dropdown elements of the header
+ */
 class HeaderOptions extends React.Component {
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside, true);
@@ -10,7 +13,9 @@ class HeaderOptions extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("click", this.handleClickOutside, true);
   }
-  /** Handles the event when a user clicks outside the relement*/
+  /**
+   * Handles the event when a user clicks outside the element
+   */
   handleClickOutside = (event) => {
     const domNode = ReactDOM.findDOMNode(this);
     if (!domNode || !domNode.contains(event.target)) {

@@ -9,13 +9,16 @@ import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
 import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";
 import UploadIcon from "mdi-react/UploadIcon";
 import HeartOutlineIcon from "mdi-react/HeartOutlineIcon";
+/**
+ * Renders the stream info for stream sections
+ **/
 class StreamerInfo extends React.Component {
   state = { uptime: 0, intervalUpdateUptime: null };
   componentDidMount() {
     this.beginTimerLoad();
   }
   componentDidUpdate(prevProps) {
-    if (prevProps.id != this.props.id) {
+    if (prevProps.id !== this.props.id) {
       this.setState({ uptime: this.props.stream.uptime });
       return;
     }
@@ -24,10 +27,13 @@ class StreamerInfo extends React.Component {
   componentWillUnmount() {
     clearInterval(this.state.intervalUpdateUptime);
   }
+  /**
+   * Mimics live data by updating the "uptime" every second
+   **/
   beginTimerLoad = () => {
     if (!this.state.intervalUpdateUptime && this.props.stream) {
       const intervalUpdateUptime = setInterval(() => {
-        this.setState({ uptime: (this.state.uptime += 1000) }); //increment by a second
+        this.setState({ uptime: this.state.uptime + 1000 }); //increment by a second
       }, 1000);
       this.setState({
         uptime: this.props.stream.uptime,
@@ -39,7 +45,6 @@ class StreamerInfo extends React.Component {
     if (!this.props.stream) {
       return null;
     }
-
     const renderPills = this.props.stream.tags.map((tag) => {
       return (
         <React.Fragment key={tag}>

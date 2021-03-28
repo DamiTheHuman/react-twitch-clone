@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 import LiveStreamCard from "../../cards/LiveStreamCard";
 import CategoryCard from "../../cards/CategoryCard";
 import ScrollableContent from "../../common/ScrollableContent";
-
+/**
+ * @ref @MobileVersion
+ * The main URL for all the streams displayed
+ **/
 class StreamsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCategories();

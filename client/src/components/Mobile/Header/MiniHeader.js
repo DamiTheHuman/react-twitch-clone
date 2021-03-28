@@ -5,7 +5,10 @@ import ContentCopyIcon from "mdi-react/ContentCopyIcon";
 import SearchIcon from "mdi-react/SearchIcon";
 import TwitchLogo from "../../Icon/TwitchLogo";
 import HeaderOptions from "./HeaderOptions";
-
+/**
+ * @ref @BrowserVersion
+ * The main header for the moobile component
+ */
 class MiniHeader extends React.Component {
   state = { options: false };
   /** Sets the value for the toggle option*/

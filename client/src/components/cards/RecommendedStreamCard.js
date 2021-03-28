@@ -1,8 +1,17 @@
 import React from "react";
+import { numberFormatter } from "../../apis/general";
+import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
-const RecommendedStreamCard = () => {
+/**
+ * A data card for  a reccomended stream
+ **/
+const RecommendedStreamCard = ({ stream }) => {
+  if (!stream) {
+    return <div>NO STREAM Available</div>;
+  }
+  console.log(stream);
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">
       <button>
@@ -10,12 +19,14 @@ const RecommendedStreamCard = () => {
       </button>
       <div className="flex shadow-xl">
         <div className="relative">
-          <video width="530" height="300" controls />
-          <div className="live text-xs absolute text-base text-white uppercase">
-            <div className="px-2 bg-live rounded font-semibold">
-              <p>Live</p>
+          <Link to={`/streams/${stream.id}`}>
+            <div className="thumbnail">
+              <video width="530" height="300" controls />
+              <div className="card-text-overlay bg-red-600 px-1 rounded absolute align-t-l">
+                <p className="font-semibold">LIVE</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="stream-details p-2 bg-white w-52">
           {/* Main Stream Details*/}
@@ -26,9 +37,11 @@ const RecommendedStreamCard = () => {
               alt="A User"
             />
             <div className="main-details text-sm">
-              <p className="text-primary font-semibold">HeadlessCoder</p>
-              <p className="text-primary">React</p>
-              <p>8.7KViews</p>
+              <p className="text-primary font-semibold">
+                {stream.user.userName}
+              </p>
+              <p className="text-primary">{stream.title}</p>
+              <p>{numberFormatter(stream.views)} Views</p>
             </div>
           </div>
           {/* Stream Tags*/}
@@ -36,9 +49,7 @@ const RecommendedStreamCard = () => {
             <Pill content="Flex" />
             <Pill content="JS" />
           </div>
-          <p className="text-xs">
-            Future developer trying to figure everything out.
-          </p>
+          <p className="text-xs">{stream.description}</p>
         </div>
       </div>
       <button>

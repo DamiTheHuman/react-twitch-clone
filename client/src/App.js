@@ -9,9 +9,11 @@ function App() {
   return (
     <div className="App font-inter bg-light">
       <BrowserRouter>
+        {/* Borwser Only Version*/}
         <BrowserView>
           <BrowserVersion />
         </BrowserView>
+        {/* Mobile Only Version*/}
         <MobileView>
           <MobileVersion />
         </MobileView>

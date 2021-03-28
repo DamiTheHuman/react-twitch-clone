@@ -3,6 +3,10 @@ import Pill from "../../common/Pill";
 import LiveStreamCard from "../../cards/LiveStreamCard";
 import { fetchCategory } from "../../../actions";
 import { connect } from "react-redux";
+/**
+ * @ref @MobileVersion
+ * Displays a set directory game in directories /directory/game/:id
+ */
 class DirectoryCategory extends React.Component {
   componentDidMount() {
     this.props.fetchCategory(this.props.match.params.id);

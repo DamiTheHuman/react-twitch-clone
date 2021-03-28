@@ -7,7 +7,9 @@ import Header from "./Header/Header";
 import SideNav from "./SideNav/SideNav";
 import StreamsIndex from "./Streams/StreamsIndex";
 import Stream from "./Streams/Stream";
-
+/**
+ * The browser version of the application
+ */
 const BrowserVersion = () => {
   return (
     <div className="browser">
@@ -16,7 +18,6 @@ const BrowserVersion = () => {
         <div>
           <SideNav />
         </div>
-
         <div className="flex-grow relative bg-white">
           <Switch>
             <Route path="/" component={StreamsIndex} exact />

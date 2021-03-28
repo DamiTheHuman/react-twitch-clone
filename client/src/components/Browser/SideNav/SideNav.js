@@ -6,14 +6,19 @@ import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import VideoOutlineIcon from "mdi-react/VideoOutlineIcon";
 import RecommendedChannel from "../../common/RecommendedChannel";
+/**
+ * @ref @BrowserVersion
+ * The side navigation for the website
+ */
 class SideNav extends React.Component {
-  state = {
-    collapse: false,
-  };
+  state = { collapse: false };
   componentDidMount() {
     const query = "?_expand=user&_sort=views&_order=desc";
     this.props.fetchStreams(query);
   }
+  /**
+   * Handles the event and render active stream
+   */
   renderActiveStreams = () => {
     if (this.props.streams) {
       return this.props.streams.map((stream, index) => {

@@ -1,5 +1,7 @@
 import React from "react";
-
+/**
+ * A simple data pill template that contains content
+ **/
 const Pill = ({ content }) => {
   return (
     <div className="h-8 relative cursor-pointer">

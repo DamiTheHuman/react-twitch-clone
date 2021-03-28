@@ -3,9 +3,12 @@ import { numberFormatter } from "../../apis/general";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
 import "./LiveStreamCard.css";
+/**
+ * A data card for live streams
+ **/
 const LiveStreamCard = ({ stream }) => {
   if (!stream) {
-    return <div>NO STREAM PASSED</div>;
+    return <div>NO STREAM Available</div>;
   }
   const renderPills = stream.tags.map((tag) => {
     return (
@@ -30,7 +33,7 @@ const LiveStreamCard = ({ stream }) => {
                 className="w-full h-auto"
                 alt="A live Stream"
               />
-              <div className="card-text-overlay bg-red-600 px-1  rounded absolute align-t-l">
+              <div className="card-text-overlay bg-red-600 px-1 rounded absolute align-t-l">
                 <p className="font-semibold">LIVE</p>
               </div>
               <div className="card-text-overlay bg-none absolute align-b-l">

@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+/**
+ * @ref @BrowserVersion
+ * The specific link type that for directories
+ */
 const DirectoryLink = ({ active, to, children }) => {
   return (
     <Link

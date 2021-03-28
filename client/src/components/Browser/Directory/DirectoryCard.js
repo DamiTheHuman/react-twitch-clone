@@ -1,5 +1,10 @@
 import React from "react";
 import "./DirectoryCard.css";
+/**
+ * @ref @BrowserVersion
+ * The directory cards for different card types
+ * @param directory the directory card to be shown
+ */
 const DirectoryCard = ({ directory }) => {
   return (
     <div

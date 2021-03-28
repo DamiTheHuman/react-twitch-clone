@@ -1,5 +1,7 @@
 import React from "react";
-
+/**
+ * Handles the chatbox and its general actions
+ **/
 const ChatBox = ({ chatLog, onScroll, scrolledToBottom }) => {
   /**
    *Renders the current chat log

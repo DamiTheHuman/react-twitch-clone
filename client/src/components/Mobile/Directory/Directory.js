@@ -2,7 +2,10 @@ import React from "react";
 import CategoryCard from "../../cards/CategoryCard";
 import { fetchCategories } from "../../../actions";
 import { connect } from "react-redux";
-
+/**
+ * @ref @MobileVersion
+ * The main directory which displays a categories or streams
+ */
 class Directory extends React.Component {
   componentDidMount() {
     this.props.fetchCategories();

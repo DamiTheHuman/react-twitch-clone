@@ -2,7 +2,9 @@ import React from "react";
 import "./CategoryCard.css";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
-
+/**
+ * The singular responsive category card displaying category type
+ **/
 const CategoryCard = ({ category, stretch }) => {
   const renderPills = category.tags.map((tag) => {
     return (

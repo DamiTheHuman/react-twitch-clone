@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+/**
+ * A data card for live clips
+ **/
 const ClipCard = () => {
   return (
     <div className="clip-card card w-full">

@@ -2,6 +2,11 @@ import React from "react";
 import streams from "../../../apis/streams";
 import LiveStreamCard from "../../cards/LiveStreamCard";
 import ChevronDownIcon from "mdi-react/ChevronDownIcon";
+
+/**
+ * @ref @BrowserVersion
+ * Suggested streams displayed for the user on the streams index
+ */
 class SuggestedStreams extends React.Component {
   state = { showMore: false, streams: [] };
   componentDidMount() {

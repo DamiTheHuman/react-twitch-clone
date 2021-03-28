@@ -1,11 +1,13 @@
 import React from "react";
-import { fetchCategories } from "../../../actions/";
+import { fetchCategories, fetchStream } from "../../../actions/";
 import { connect } from "react-redux";
 import RecommendedStreamCard from "../../cards/RecommendedStreamCard";
 import SuggestedStreams from "./SuggestedStreams";
 import SuggestedCategories from "./SuggestedCategories";
 import DirectoryCardList from "../Directory/DirectoryCardList";
+import { Link } from "react-router-dom";
 /**
+ * @ref @BrowserVersion
  * The main URL for all the streams displayed
  **/
 class StreamsIndex extends React.Component {
@@ -13,10 +15,9 @@ class StreamsIndex extends React.Component {
     this.props.fetchCategories();
   }
   render() {
-    var streams = [0, 1, 2, 3, 4, 5];
     return (
       <div className="streams-index py-8 px-8">
-        <RecommendedStreamCard />
+        <RecommendedStreamCard stream={this.props.streams[0]} />
         {/*Stream Recommendations*/}
         <SuggestedStreams
           title={
@@ -31,10 +32,10 @@ class StreamsIndex extends React.Component {
         <SuggestedCategories
           title={
             <h4 className="font-semibold mb-2 text-lg">
-              <a href="/#" className="text-primary">
+              <Link to="/directory" className="text-primary">
                 Categories
-              </a>{" "}
-              channels we think you’ll like
+              </Link>{" "}
+              we think you’ll like
             </h4>
           }
           categories={this.props.categories}
@@ -43,13 +44,25 @@ class StreamsIndex extends React.Component {
           title={
             <h4 className="font-semibold mb-2 text-lg">
               Recommended{" "}
-              <a href="/#" className="text-primary">
+              <Link to="/directory/game/Minecraft" className="text-primary">
                 Minecraft
-              </a>{" "}
+              </Link>{" "}
               channels
             </h4>
           }
           game="Minecraft"
+        />
+        <SuggestedStreams
+          title={
+            <h4 className="font-semibold mb-2 text-lg">
+              Recommended{" "}
+              <Link to="/directory/game/Fortnite" className="text-primary">
+                Fortnite
+              </Link>{" "}
+              channels
+            </h4>
+          }
+          game="Fortnite"
         />
       </div>
     );
@@ -57,7 +70,12 @@ class StreamsIndex extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { categories: Object.values(state.categories) };
+  return {
+    categories: Object.values(state.categories),
+    streams: Object.values(state.streams),
+  };
 };
 
-export default connect(mapStateToProps, { fetchCategories })(StreamsIndex);
+export default connect(mapStateToProps, { fetchCategories, fetchStream })(
+  StreamsIndex
+);

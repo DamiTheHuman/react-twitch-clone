@@ -2,7 +2,10 @@ import React from "react";
 import ChatBox from "../../ChatBox/ChatBox";
 import ChatBoxActions from "../../ChatBox/ChatBoxActions";
 import Pill from "../../common/Pill";
-
+/**
+ * @ref @MobileVersion
+ * A Singular componenet displayed to the user
+ */
 class Stream extends React.Component {
   state = {
     scrolledToBottom: false,

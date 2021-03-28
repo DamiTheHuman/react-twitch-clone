@@ -6,13 +6,16 @@ import CategoryCard from "../../cards/CategoryCard";
 import DirectoryCardList from "./DirectoryCardList";
 import DirectoryActions from "./DirectoryActions";
 import DirectoryLink from "./DirectoryLink";
-
+/**
+ * @ref @BrowserVersion
+ * The main directory which displays a categories or streams
+ */
 class Directory extends React.Component {
   componentDidMount() {
     if (!this.props.loadCategories) {
       this.props.fetchCategories();
     } else {
-      var query = "?_expand=user&_sort=views&_order=desc";
+      const query = "?_expand=user&_sort=views&_order=desc";
       this.props.fetchStreams(query);
     }
   }

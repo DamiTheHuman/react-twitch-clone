@@ -12,22 +12,29 @@ import VideoCard from "../../cards/VideoCard";
 import DirectoryActions from "./DirectoryActions";
 import DirectoryLink from "./DirectoryLink";
 import ClipCard from "../../cards/ClipCard";
-
+/**
+ * @ref @BrowserVersion
+ * Displays a set directory game/category in directories /directory/game/:id
+ */
 class DirectoryGame extends React.Component {
   state = { streams: null };
   componentDidMount() {
     this.props.fetchCategoryByTitle(this.props.match.params.id);
     this.fetchStreams();
   }
+  /**
+   * Retrives the streams belonging to the specified category
+   */
   fetchStreams = async () => {
     if (this.props.match.params.id) {
       const query = `?_expand=user&game=${this.props.match.params.id}&_sort=views&_order=asc`;
       const response = await streams.get(`/streams/${query}`);
-
       this.setState({ streams: response.data });
     }
   };
-
+  /**
+   * Rendersthe specified category based on the current directory
+   */
   renderCategory = () => {
     if (!this.props.category) {
       return <div>Loading..</div>;

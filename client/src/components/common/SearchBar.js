@@ -1,7 +1,7 @@
 import React from "react";
 import SearchIcon from "mdi-react/SearchIcon";
 /**
- * Manages the users search requests
+ * Renders and manages the main search bar for the application
  */
 const SearchBar = ({ onSearchSubmit }) => {
   return (

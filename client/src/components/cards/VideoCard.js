@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
+/**
+ * A data card for videos
+ **/
 const VideoCard = () => {
   return (
     <div className="clip-card card border w-full">
