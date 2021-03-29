@@ -6,6 +6,10 @@ import ChatBox from "../../ChatBox/ChatBox";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
 import GiftIcon from "mdi-react/GiftIcon";
+import GoldGiftIcon from "../../../assets/gifts/gift_gold.png";
+import SilverGiftIcon from "../../../assets/gifts/gift_silver.png";
+import BronzeGiftIcon from "../../../assets/gifts/gift_bronze.png";
+import GenericGiftIcon from "../../../assets/gifts/gift_generic.png";
 import StreamChatActions from "./StreamChatActions";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 /**
@@ -83,7 +87,7 @@ class StreamChat extends React.Component {
         } text-sm sticky content-height flex flex-col border-l-2 overflow-y-auto`}
       >
         {/* Render Chat Actions*/}
-        <div className="relative flex  px-1.5 justify-between items-center py-4 border-b">
+        <div className="relative flex font-semibold px-1.5 justify-between items-center py-2 border-b">
           {this.renderButton()}
           <div>STREAM CHAT</div>
           <button className="rounded px-1.5 py-2 hover:bg-gray-200">
@@ -92,41 +96,42 @@ class StreamChat extends React.Component {
         </div>
         {/* Render Chat Leaders*/}
         <div className="relative flex justify-between items-center space-x-2 border-b text-xs">
-          <button className="h-full hover:bg-gray-200 py-4">
+          <button className="h-full hover:bg-gray-200 py-2">
             <ChevronLeftIcon size={24} />
           </button>
 
-          <div className="flex justify-between flex-grow cursor-pointer px-2 hover:bg-gray-200 font-semibold py-4">
+          <div className="flex justify-between flex-grow cursor-pointer px-2 hover:bg-gray-200 font-semibold py-1.5">
             <div className="flex items-center space-x-1 ">
-              <GiftIcon size={32} color="red" />
+              <img className="w-7" src={GoldGiftIcon}></img>
+
               <div className="flex flex-col space-1">
                 <div>
                   <p className="truncate">Headless</p>
                 </div>
                 <div>
-                  <div className="flex">
-                    <GiftIcon size={16} color="orange" />
+                  <div className="flex items-center space-x-1">
+                    <img className="w-3 h-full" src={GenericGiftIcon}></img>
                     <p>120</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex flex-col space-y-2">
-              <div className="flex space-x-1">
-                <GiftIcon size={20} color="gray" />
+              <div className="flex space-x-1 items-center">
+                <img className="w-5" src={SilverGiftIcon}></img>
                 <p className="truncate">Headless</p>
-                <GiftIcon size={16} color="blue" />
+                <img className="w-3 h-3" src={GenericGiftIcon}></img>
                 <p>120</p>
               </div>
-              <div className="flex space-x-1">
-                <GiftIcon size={20} color="silver" />
+              <div className="flex space-x-1 items-center">
+                <img className="w-5" src={BronzeGiftIcon}></img>
                 <p className="truncate">Headless</p>
-                <GiftIcon size={16} color="blue" />
+                <img className="w-3 h-3" src={GenericGiftIcon}></img>
                 <p>120</p>
               </div>
             </div>
           </div>
-          <button className="h-full hover:bg-gray-200 py-4">
+          <button className="h-full hover:bg-gray-200 py-2">
             <ChevronRightIcon size={24} />
           </button>
         </div>

@@ -51,7 +51,7 @@
     {
       "id": 0,
       "userName" : "HeadlessCoder",
-      "avatar" : "",
+      "avatar" : "avatar_1.jfif",
       "followers": "100000",
       "color":"red"
     },
@@ -59,49 +59,49 @@
       "id": 1,
       "userName" : "A_Streamer",
       "followers": "0",
-      "avatar" : "",
+      "avatar" : "avatar_2.jfif",
       "color":"blue"
     },
     {
       "id": 2,
       "userName" : "THQ",
       "followers": "50000",
-      "avatar" : "",
+      "avatar" : "avatar_3.jfif",
       "color":"green"
     },
     {
       "id": 3,
       "userName" : "Duel_Master",
       "followers": "100",
-      "avatar" : "",
+      "avatar" : "avatar_4.jfif",
       "color":"orange"
     },
     {
       "id": 4,
       "userName" : "Dev_School",
       "followers": "9999999",
-      "avatar" : "",
+      "avatar" : "avatar_5.jfif",
       "color":"teal"
     },
     {
       "id": 5,
-      "userName" : "CorpseWife",
+      "userName" : "PokeCaptain",
       "followers": "5680",
-      "avatar" : "",
+      "avatar" : "avatar_6.jfif",
       "color":"pink"
     },
     {
       "id": 6,
       "userName" : "ATP",
       "followers": "2030",
-      "avatar" : "",
+      "avatar" : "avatar_7.jfif",
       "color":"yellow"
     },
     {
       "id": 7,
       "userName" : "CallMeTim",
       "followers": "800",
-      "avatar" : "",
+      "avatar" : "avatar_8.jfif",
       "color":"gray"
     }
   ]
@@ -112,7 +112,7 @@
       "userId":0,
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "title": "First Stream Back!",
-      "thumbnail" : "",
+      "thumbnail" : "stream_1.jfif",
       "game":"Fortnite",
       "views" : 50000,
       "uptime": 350000000,
@@ -125,7 +125,7 @@
       "title": "Join Up",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "views" : 25000,
-      "thumbnail" : "",
+      "thumbnail" : "stream_2.jfif",
       "game":"Fortnite",
       "uptime": 210000000,
       "tags": ["Spanish","Sandbox"],
@@ -136,7 +136,7 @@
       "userId":2,
       "title": "Cant think of a Title",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
+      "thumbnail" : "stream_3.jfif",
       "game":"Fortnite",
       "views" : 20000,
       "uptime": 10000000,
@@ -148,7 +148,7 @@
       "userId":3,
       "title": "GG's that was me 😁",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
+      "thumbnail" : "stream_4.jfif",
       "game":"Fortnite",
       "views" : 500,
       "uptime": 37500000,
@@ -158,10 +158,10 @@
     {
       "id": 4,
       "userId":4,
-      "title": "1v1 Rust",
+      "title": "Lets learn Redux",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
-      "game":"Minecraft",
+      "thumbnail" : "stream_5.jfif",
+      "game":"Just Chatting",
       "views" : 499,
       "uptime": 4000000,
       "tags": ["English","Shooter"],
@@ -172,7 +172,7 @@
       "userId":5,
       "title": "What even is this game at this point?",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
+      "thumbnail" : "stream_6.jfif",
       "game":"Fortnite",
       "views" : 9001,
       "uptime": 80000000,
@@ -184,7 +184,7 @@
       "userId":6,
       "title": "We free",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
+      "thumbnail" : "stream_7.jfif",
       "game":"Minecraft",
       "views" : 10000,
       "uptime": 20000000,
@@ -196,7 +196,7 @@
       "userId":7,
       "title": "Trying to Git Gud",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "thumbnail" : "",
+      "thumbnail" : "stream_8.jfif",
       "game":"Minecraft",
       "views" : 8000,
       "uptime": 3000000,

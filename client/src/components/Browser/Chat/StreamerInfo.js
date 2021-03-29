@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import "./StreamerInfo.css";
 import { fetchStream } from "../../../actions";
 import { connect } from "react-redux";
 import { msToTime, numberFormatter } from "../../../apis/general";
@@ -53,13 +54,13 @@ class StreamerInfo extends React.Component {
       );
     });
     return (
-      <div className="bg-gray-100">
-        <div className="flex flex-row justify-between p-4">
+      <div className="streamer-info bg-gray-100">
+        <div className="stream-details flex flex-row justify-between p-4">
           <div className="flex items-center space-x-2">
             <div>
               <img
-                src="http://via.placeholder.com/70"
-                className={`border-${this.props.stream.user.color}-400 rounded-full border-2 p-0.5`}
+                src={`http://localhost:3000/avatars/${this.props.stream.user.avatar}`}
+                className={`border-${this.props.stream.user.color}-400 avatar rounded-full border-2 p-0.5`}
                 alt="A User"
               />
             </div>
@@ -110,13 +111,13 @@ class StreamerInfo extends React.Component {
           </div>
         </div>
         {/* Streamer About*/}
-        <div className="flex flex-col px-4 mb-4">
+        <div className="streamer-about flex flex-col px-4 mb-4">
           <div className="p-4 bg-white rounded">
             <div className="flex items-center space-x-8">
               <div className="flex flex-col space-y-2">
                 <img
-                  src="http://via.placeholder.com/96"
-                  className="rounded-full"
+                  src={`http://localhost:3000/avatars/${this.props.stream.user.avatar}`}
+                  className="avatar rounded-full"
                   alt="A User"
                 />
                 <p className="text-sm text-center flex-grow">

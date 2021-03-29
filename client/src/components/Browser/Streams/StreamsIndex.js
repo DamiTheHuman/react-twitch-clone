@@ -17,7 +17,7 @@ class StreamsIndex extends React.Component {
   render() {
     return (
       <div className="streams-index py-8 px-8">
-        <RecommendedStreamCard stream={this.props.streams[0]} />
+        <RecommendedStreamCard stream={this.props.streams[1]} />
         {/*Stream Recommendations*/}
         <SuggestedStreams
           title={

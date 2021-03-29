@@ -1,4 +1,5 @@
 import React from "react";
+import "./RecommendedStreamCard.css";
 import { numberFormatter } from "../../apis/general";
 import { Link } from "react-router-dom";
 import Pill from "../common/Pill";
@@ -11,7 +12,6 @@ const RecommendedStreamCard = ({ stream }) => {
   if (!stream) {
     return <div>NO STREAM Available</div>;
   }
-  console.log(stream);
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">
       <button>
@@ -30,9 +30,9 @@ const RecommendedStreamCard = ({ stream }) => {
         </div>
         <div className="stream-details p-2 bg-white w-52">
           {/* Main Stream Details*/}
-          <div className="flex space-x-2 items-center">
+          <div className="avatar flex space-x-2 items-center">
             <img
-              src="http://via.placeholder.com/50"
+              src={`http://localhost:3000/avatars/${stream.user.avatar}`}
               className="rounded-full"
               alt="A User"
             />

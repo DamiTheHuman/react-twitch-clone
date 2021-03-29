@@ -1,4 +1,5 @@
 import React from "react";
+import "./RecommendedChannel.css";
 import { Link } from "react-router-dom";
 import { numberFormatter } from "../../apis/general";
 /**
@@ -8,12 +9,12 @@ const RecommendedChannel = ({ stream, collapse }) => {
   return (
     <Link
       to={`/streams/${stream.id}`}
-      className="px-2 pb-1 flex text-sm items-center space-x-2 hover:bg-gray-200"
+      className="recommended-channel px-2 pb-1 flex text-sm items-center space-x-2 hover:bg-gray-200"
     >
       {/* Streamer Avi*/}
       <img
-        src="http://via.placeholder.com/30/9147FF"
-        className={`border-${stream.user.color}-400 rounded-full border-2 p-0.5`}
+        src={`http://localhost:3000/avatars/${stream.user.avatar}`}
+        className={`avatar border-${stream.user.color}-400 rounded-full border-2 p-0.5`}
         alt="A User"
       />
       {/* Stream Details*/}

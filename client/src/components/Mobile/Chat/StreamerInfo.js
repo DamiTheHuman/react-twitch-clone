@@ -1,4 +1,5 @@
 import React from "react";
+import "./StreamerInfo.css";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import Pill from "../../common/Pill";
@@ -18,13 +19,13 @@ class StreamerInfo extends React.Component {
       );
     });
     return (
-      <div className="bg-gray-100">
-        <div className="flex flex-row p-2 ">
+      <div className="streamer-info bg-gray-100">
+        <div className="stream-details flex flex-row p-2 ">
           <div className="flex items-center space-x-2 ">
             <div>
               <img
-                src="http://via.placeholder.com/50"
-                className={`rounded-full`}
+                src={`http://localhost:3000/avatars/${this.props.stream.user.avatar}`}
+                className="rounded-full avatar"
                 alt="A User"
               />
             </div>

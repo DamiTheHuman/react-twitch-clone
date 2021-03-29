@@ -74,9 +74,9 @@ class DirectoryCategory extends React.Component {
     }
     return this.state.streams.map((stream, index) => {
       return (
-        <React.Fragment key={index}>
+        <div key={index} className="w-full">
           <LiveStreamCard stream={stream} />
-        </React.Fragment>
+        </div>
       );
     });
   };
