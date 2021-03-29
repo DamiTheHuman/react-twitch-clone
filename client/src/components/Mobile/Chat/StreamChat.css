@@ -1,0 +1,12 @@
+.mobile #stream-chat {
+  transition: width 0.15s;
+}
+.mobile #stream-chat {
+  top: 3rem;
+}
+
+.mobile .collapsed-button {
+  position: fixed;
+  color: white;
+  right: 0.75rem;
+}

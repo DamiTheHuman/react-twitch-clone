@@ -55,3 +55,16 @@
 .browser .top-offset {
   top: 3rem;
 }
+
+.browser .chat-box-actions.active .outline {
+  border-color: #9147ff !important;
+  background: white;
+}
+
+.browser .chat-box-actions:hover .outline {
+  border-color: grey;
+}
+
+.browser .chat-box-actions .outline {
+  border: 2px solid transparent;
+}

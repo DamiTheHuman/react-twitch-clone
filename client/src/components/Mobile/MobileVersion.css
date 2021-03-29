@@ -1,3 +1,19 @@
 .mobile .card {
   border-width: 1px;
 }
+
+.mobile .mobile-video,
+.mobile .mobile-chat {
+  height: calc(100vh - 3rem);
+}
+
+/* Tablets only*/
+@media only screen and (max-device-width: 768px) {
+  /* Styles */
+  .mobile .mobile-video {
+    height: calc(40vh - 3rem) !important;
+  }
+  .mobile .mobile-chat {
+    height: calc(60vh) !important;
+  }
+}

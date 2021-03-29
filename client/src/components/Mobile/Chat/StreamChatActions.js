@@ -3,11 +3,12 @@ import EmoticonNeutralOutlineIcon from "mdi-react/EmoticonNeutralOutlineIcon";
 import CogOutlineIcon from "mdi-react/CogOutlineIcon";
 import FlareIcon from "mdi-react/FlareIcon";
 /**
- * @ref @BrowserVersion
+ * @ref @MobileVersion
  * Handles the stream chat actions
  */
 class StreamChatActions extends React.Component {
-  state = { textAreaFocus: false, message: "" };
+  state = { message: "" };
+
   componentDidMount() {
     var textarea = document.querySelector("textarea");
     textarea.addEventListener("keydown", this.resizeTextArea);
@@ -17,23 +18,23 @@ class StreamChatActions extends React.Component {
     textarea.removeEventListener("keydown", this.resizeTextArea);
   }
   /**
-   * When the text area is focused on by the user
-   */
-  onTextAreaFocus = () => {
-    this.setState({ textAreaFocus: true });
-  };
-  /**
-   * When the user exits the text area
-   */
-  onTextAreaBlur = () => {
-    this.setState({ textAreaFocus: false });
-  };
-  /**
    * Updates the state value for the text area
    */
   onTextAreaChange = (value) => {
     this.setState({ message: value });
   };
+  /**
+   * Resizes the text area based on the lines writtien in the text area
+   * A max height is set on this so it doesnt exceed 4 lines via css
+   **/
+  resizeTextArea = () => {
+    var el = document.querySelector("#growable-textarea");
+    setTimeout(function () {
+      el.style.cssText = "height:auto;";
+      el.style.cssText = "height:" + el.scrollHeight + "px";
+    }, 0);
+  };
+
   /**
    * On the the form submission
    */
@@ -43,24 +44,21 @@ class StreamChatActions extends React.Component {
   };
   render() {
     return (
-      <div className="px-2 py-2">
+      <div className="chat-actions bg-gray-200 border-t py-1">
         <form
           onSubmit={(event) => {
             event.preventDefault();
             this.onFormSubmit();
           }}
-          className={`${
-            this.state.textAreaFocus ? "active" : ""
-          } chat-box-actions text-xs w-full`}
+          className="chat-box-actions text-xs w-full"
         >
-          <div className=" flex items-center px-2 py-1 space-x-4  mb-2 bg-gray-200 outline rounded">
-            <div className="flex-grow">
+          <div className=" flex items-center px-2 space-x-4 outline rounded">
+            <div className="flex-grow flex items-center">
               <textarea
                 id="growable-textarea"
+                className="w-full"
                 rows="1"
                 value={this.state.message}
-                onFocus={this.onTextAreaFocus}
-                onBlur={this.onTextAreaBlur}
                 onChange={(event) => {
                   this.onTextAreaChange(event.target.value);
                 }}
@@ -70,31 +68,17 @@ class StreamChatActions extends React.Component {
                     this.onFormSubmit();
                   }
                 }}
-                placeholder="Send A Message"
+                placeholder="Send a Message"
                 className="border-opacity-0 px-2 py-1"
               />
             </div>
-            <div className="justify-self-end">
-              <button className="text-gray-800">
-                <EmoticonNeutralOutlineIcon size={20} />
-              </button>
-            </div>
-          </div>
-        </form>
-        <div className="channel-actions flex justify-between items-center">
-          <div className="flex space-x-2 items-center">
-            <FlareIcon size={20} />
-            <span className="font-semibold">0</span>
-          </div>
-          <div className="flex space-x-2 items-center">
-            <CogOutlineIcon size={20} />
             <div className="justify-self-end">
               <button className="bg-primary text-white rounded p-2">
                 Chat
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

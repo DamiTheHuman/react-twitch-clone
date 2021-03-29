@@ -22,9 +22,6 @@ button:focus {
   max-height: 5rem;
 }
 
-.chat-box-actions .outline {
-  border: 2px solid transparent;
-}
 .chat-box-actions.active .outline {
   border-color: #9147ff !important;
   background: white;

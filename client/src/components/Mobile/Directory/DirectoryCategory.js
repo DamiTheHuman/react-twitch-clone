@@ -1,16 +1,33 @@
 import React from "react";
+import _ from "lodash";
+import streams from "../../../apis/streams";
 import Pill from "../../common/Pill";
 import LiveStreamCard from "../../cards/LiveStreamCard";
-import { fetchCategory } from "../../../actions";
+import { fetchCategories } from "../../../actions";
 import { connect } from "react-redux";
 /**
  * @ref @MobileVersion
  * Displays a set directory game in directories /directory/game/:id
  */
 class DirectoryCategory extends React.Component {
+  state = { streams: null };
   componentDidMount() {
-    this.props.fetchCategory(this.props.match.params.id);
+    this.props.fetchCategories();
+    this.fetchStreams();
   }
+  /**
+   * Retrives the streams belonging to the specified category
+   */
+  fetchStreams = async () => {
+    if (this.props.match.params.id) {
+      const query = `?_expand=user&game=${this.props.match.params.id}&_sort=views&_order=asc`;
+      const response = await streams.get(`/streams/${query}`);
+      this.setState({ streams: response.data });
+    }
+  };
+  /**
+   * Renders the main category/game with its respective information
+   */
   renderCategory = () => {
     if (!this.props.category) {
       return <div>Loading..</div>;
@@ -30,7 +47,6 @@ class DirectoryCategory extends React.Component {
           className="h-auto w-20"
           alt="A Category"
         />
-
         <div>
           <h3 className="text-lg font-semibold">{category.title} </h3>
           <p className="text-sm">
@@ -46,16 +62,25 @@ class DirectoryCategory extends React.Component {
       </React.Fragment>
     );
   };
-
-  render() {
-    var Streams = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    const renderLiveStreams = Streams.map((stream, index) => {
+  /**
+   * Retrives the streams that belong to the queried cateogry/game
+   */
+  renderLiveStreams = () => {
+    if (!this.state.streams) {
+      return null;
+    }
+    if (this.state.streams.length === 0) {
+      return <div className="text-xl font-semibold">No results found</div>;
+    }
+    return this.state.streams.map((stream, index) => {
       return (
         <React.Fragment key={index}>
-          <LiveStreamCard />
+          <LiveStreamCard stream={stream} />
         </React.Fragment>
       );
     });
+  };
+  render() {
     return (
       <div className="streams-browse-category px-2 py-4">
         <div className="title-card mb-4">
@@ -64,13 +89,16 @@ class DirectoryCategory extends React.Component {
           </div>
         </div>
         <div className="active-streams grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2">
-          {renderLiveStreams}
+          {this.renderLiveStreams()}
         </div>
       </div>
     );
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  return { category: state.categories[ownProps.match.params.id] };
+  const category = _.find(state.categories, function (category) {
+    return category.title === ownProps.match.params.id;
+  });
+  return { category: category };
 };
-export default connect(mapStateToProps, { fetchCategory })(DirectoryCategory);
+export default connect(mapStateToProps, { fetchCategories })(DirectoryCategory);

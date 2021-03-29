@@ -1,19 +1,11 @@
 import React from "react";
-import StreamerInfo from "../../cards/StreamerInfo";
+import StreamerInfo from "../Chat/StreamerInfo";
 import StreamChat from "../Chat/StreamChat";
 /**
  * @ref @BrowserVersion
- * A Singular componenet displayed to the user
+ * A live stream componenet displayed to the user
  */
 class Stream extends React.Component {
-  componentDidMount() {
-    var textarea = document.querySelector("textarea");
-    textarea.addEventListener("keydown", this.resizeTextArea);
-  }
-  componentWillUnmount() {
-    var textarea = document.querySelector("textarea");
-    textarea.removeEventListener("keydown", this.resizeTextArea);
-  }
   /**
    * Resizes the text area based on the lines writtien in the text area
    * A max height is set on this so it doesnt exceed 4 lines via css

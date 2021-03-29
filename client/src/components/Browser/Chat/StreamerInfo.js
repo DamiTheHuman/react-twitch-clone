@@ -1,9 +1,9 @@
 import React from "react";
 import _ from "lodash";
-import { fetchStream } from "../../actions/";
+import { fetchStream } from "../../../actions";
 import { connect } from "react-redux";
-import { msToTime, numberFormatter } from "../../apis/general";
-import Pill from "../common/Pill";
+import { msToTime, numberFormatter } from "../../../apis/general";
+import Pill from "../../common/Pill";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
 import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
 import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";

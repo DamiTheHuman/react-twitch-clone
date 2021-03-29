@@ -9,6 +9,13 @@ function App() {
   return (
     <div className="App font-inter bg-light">
       <BrowserRouter>
+        <MobileVersion />
+      </BrowserRouter>
+    </div>
+  );
+  return (
+    <div className="App font-inter bg-light">
+      <BrowserRouter>
         {/* Borwser Only Version*/}
         <BrowserView>
           <BrowserVersion />
