@@ -10,19 +10,19 @@
 }
 
 .directory-type.games {
-  background-image: url("../../../assets/backgrounds/gaming-background.png");
+  background-image: url("../../../../assets/backgrounds/gaming-background.png");
   background-size: 100% 100%;
 }
 .directory-type.irl {
-  background-image: url("../../../assets/backgrounds/irl-background.png");
+  background-image: url("../../../../assets/backgrounds/irl-background.png");
   background-size: 100% 100%;
 }
 .directory-type.music {
-  background-image: url("../../../assets/backgrounds/music-background.png");
+  background-image: url("../../../../assets/backgrounds/music-background.png");
   background-size: 100% 100%;
 }
 
 .directory-type.esports {
-  background-image: url("../../../assets/backgrounds/esports-background.png");
+  background-image: url("../../../../assets/backgrounds/esports-background.png");
   background-size: 100% 100%;
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./HeaderOptions.css";
+import "./NavigationOptions.css";
 /**
  * @ref @BrowserVersion
- * Header options for the dropdown elements of the header
+ * Navigation options for the dropdown elements of the header
  */
-class HeaderOptions extends React.Component {
+class NavigationOptions extends React.Component {
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside, true);
   }
@@ -53,4 +53,4 @@ class HeaderOptions extends React.Component {
   }
 }
 
-export default HeaderOptions;
+export default NavigationOptions;

@@ -2,7 +2,7 @@ import React from "react";
 import "./StreamerInfo.css";
 import _ from "lodash";
 import { Link } from "react-router-dom";
-import Pill from "../../common/Pill";
+import PillList from "../../Common/Pill/PillList";
 /**
  * Renders the stream info for stream sections
  **/
@@ -11,13 +11,7 @@ class StreamerInfo extends React.Component {
     if (!this.props.stream) {
       return null;
     }
-    const renderPills = this.props.stream.tags.map((tag) => {
-      return (
-        <React.Fragment key={tag}>
-          <Pill content={tag} />
-        </React.Fragment>
-      );
-    });
+
     return (
       <div className="streamer-info bg-gray-100">
         <div className="stream-details flex flex-row p-2 ">
@@ -46,7 +40,9 @@ class StreamerInfo extends React.Component {
             </div>
           </div>
         </div>
-        <div className="px-2 pills flex space-x-2">{renderPills}</div>
+        <div className="px-2 pills flex space-x-2">
+          <PillList list={this.props.stream.tags} />
+        </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import VideoOutlineIcon from "mdi-react/VideoOutlineIcon";
-import RecommendedChannel from "../../common/RecommendedChannel";
+import RecommendedChannel from "../../Common/RecommendedChannel/RecommendedChannel";
 /**
  * @ref @BrowserVersion
  * The side navigation for the website

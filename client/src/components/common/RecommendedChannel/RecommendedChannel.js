@@ -1,7 +1,7 @@
 import React from "react";
 import "./RecommendedChannel.css";
 import { Link } from "react-router-dom";
-import { numberFormatter } from "../../apis/general";
+import { numberFormatter } from "../../../apis/general";
 /**
  * A data button for recommended channels
  **/

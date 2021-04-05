@@ -1,10 +1,11 @@
 import React from "react";
 import "./RecommendedStreamCard.css";
-import { numberFormatter } from "../../apis/general";
+import { numberFormatter } from "../../../apis/general";
 import { Link } from "react-router-dom";
-import Pill from "../common/Pill";
+import PillList from "../../Common/Pill/PillList";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
+
 /**
  * A data card for  a reccomended stream
  **/
@@ -12,13 +13,6 @@ const RecommendedStreamCard = ({ stream }) => {
   if (!stream) {
     return <div>NO STREAM Available</div>;
   }
-  const renderPills = stream.tags.map((tag) => {
-    return (
-      <React.Fragment key={tag}>
-        <Pill content={tag} />
-      </React.Fragment>
-    );
-  });
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">
       <button>
@@ -53,7 +47,7 @@ const RecommendedStreamCard = ({ stream }) => {
           </div>
           {/* Stream Tags*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
-            {renderPills}
+            <PillList list={stream.tags} />
           </div>
           <p className="text-xs">{stream.description}</p>
         </div>

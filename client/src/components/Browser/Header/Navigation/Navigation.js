@@ -1,22 +1,21 @@
 import React from "react";
-import "./Header.css";
+import "./Navigation.css";
 import { Link } from "react-router-dom";
+import TwitchLogo from "../../../Icon/TwitchLogo";
+import NavigationOptions from "../NavigationOptions/NavigationOptions";
+import SearchBar from "../../../Common/SearchBar/SearchBar";
+import Login from "../../Authentication/Login";
+import SignUp from "../../Authentication/SignUp";
+import Modal from "../../../Common/Modal/Modal";
 import AlertIcon from "mdi-react/DotsHorizontalIcon";
 import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";
 import CrownOutlineIcon from "mdi-react/CrownOutlineIcon";
-import TwitchLogo from "../../Icon/TwitchLogo";
-import HeaderOptions from "./HeaderOptions";
-import SearchBar from "../../common/SearchBar";
-
-import Login from "../Authentication/Login";
-import SignUp from "../Authentication/SignUp";
-import Modal from "../../common/Modal";
 
 /**
  * @ref @BrowserVersion
  * The main header for the browser component
  */
-class Header extends React.Component {
+class Navigation extends React.Component {
   state = { options: false, modalActive: false, modalLink: 0 };
   /** Sets the value for the toggle option*/
   toggleOptions = (value) => {
@@ -26,7 +25,7 @@ class Header extends React.Component {
   renderOptionsMenu = () => {
     if (this.state.options) {
       return (
-        <HeaderOptions
+        <NavigationOptions
           onClickOutside={() => {
             this.toggleOptions(false);
           }}
@@ -155,4 +154,4 @@ class Header extends React.Component {
     );
   }
 }
-export default Header;
+export default Navigation;

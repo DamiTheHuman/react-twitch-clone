@@ -1,17 +1,17 @@
 import React from "react";
 import _ from "lodash";
-import streams from "../../../apis/streams";
-import { fetchCategoryByTitle } from "../../../actions/";
+import streams from "../../../../apis/streams";
+import { fetchCategoryByTitle } from "../../../../actions";
 import { connect } from "react-redux";
-import Pill from "../../common/Pill";
+import PillList from "../../../Common/Pill/PillList";
 import CircleMediumIcon from "mdi-react/CircleMediumIcon";
 import HeartOutlineIcon from "mdi-react/HeartOutlineIcon";
 import ChevronDownIcon from "mdi-react/ChevronDownIcon";
-import LiveStreamCard from "../../cards/LiveStreamCard";
-import VideoCard from "../../cards/VideoCard";
-import DirectoryActions from "./DirectoryActions";
-import DirectoryLink from "./DirectoryLink";
-import ClipCard from "../../cards/ClipCard";
+import LiveStreamCard from "../../../Cards/LiveStreamCard/LiveStreamCard";
+import VideoCard from "../../../Cards/MediaCard/VideoCard";
+import DirectoryActions from "../DirectoryActions/DirectoryActions";
+import DirectoryLink from "../DirectoryLink/DirectoryLink";
+import ClipCard from "../../../Cards/MediaCard/ClipCard";
 /**
  * @ref @BrowserVersion
  * Displays a set directory game/category in directories /directory/game/:id
@@ -40,13 +40,6 @@ class DirectoryGame extends React.Component {
       return <div>Loading..</div>;
     }
     const category = this.props.category;
-    const renderPills = category.tags.map((tag) => {
-      return (
-        <React.Fragment key={tag}>
-          <Pill content={tag} />
-        </React.Fragment>
-      );
-    });
     return (
       <div className="game flex items-center space-x-4 pb-4">
         <img
@@ -70,7 +63,7 @@ class DirectoryGame extends React.Component {
             <CircleMediumIcon size={16} />
             {/* Pills*/}
             <div className="pills flex flex-nowrap space-x-2 items-center">
-              {renderPills}
+              <PillList list={category.tags} />
             </div>
           </div>
           <div className="game-description flex space-x-8 mb-4 text-sm">

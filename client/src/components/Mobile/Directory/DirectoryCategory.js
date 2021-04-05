@@ -1,10 +1,11 @@
 import React from "react";
 import _ from "lodash";
 import streams from "../../../apis/streams";
-import Pill from "../../common/Pill";
-import LiveStreamCard from "../../cards/LiveStreamCard";
+import PillList from "../../Common/Pill/PillList";
+import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import { fetchCategories } from "../../../actions";
 import { connect } from "react-redux";
+
 /**
  * @ref @MobileVersion
  * Displays a set directory game in directories /directory/game/:id
@@ -33,13 +34,6 @@ class DirectoryCategory extends React.Component {
       return <div>Loading..</div>;
     }
     const category = this.props.category;
-    const renderPills = category.tags.map((tag) => {
-      return (
-        <React.Fragment key={tag}>
-          <Pill content={tag} />
-        </React.Fragment>
-      );
-    });
     return (
       <React.Fragment>
         <img
@@ -56,7 +50,7 @@ class DirectoryCategory extends React.Component {
           </p>
           {/* Pills*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
-            {renderPills}
+            <PillList list={category.tags} />
           </div>
         </div>
       </React.Fragment>

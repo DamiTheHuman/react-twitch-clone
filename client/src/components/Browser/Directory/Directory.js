@@ -1,11 +1,11 @@
 import React from "react";
 import { fetchCategories, fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
-import LiveStreamCard from "../../cards/LiveStreamCard";
-import CategoryCard from "../../cards/CategoryCard";
-import DirectoryCardList from "./DirectoryCardList";
-import DirectoryActions from "./DirectoryActions";
-import DirectoryLink from "./DirectoryLink";
+import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
+import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
+import DirectoryCardList from "./DirectoryCard/DirectoryCardList";
+import DirectoryActions from "./DirectoryActions/DirectoryActions";
+import DirectoryLink from "./DirectoryLink/DirectoryLink";
 /**
  * @ref @BrowserVersion
  * The main directory which displays a categories or streams

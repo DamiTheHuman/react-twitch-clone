@@ -1,10 +1,10 @@
 import React from "react";
 import { fetchCategories, fetchStream } from "../../../actions/";
 import { connect } from "react-redux";
-import RecommendedStreamCard from "../../cards/RecommendedStreamCard";
-import SuggestedStreams from "./SuggestedStreams";
-import SuggestedCategories from "./SuggestedCategories";
-import DirectoryCardList from "../Directory/DirectoryCardList";
+import RecommendedStreamCard from "../../Cards/RecommendedStreamCard/RecommendedStreamCard";
+import SuggestedStreams from "../SuggestedContent/SuggestedStreams";
+import SuggestedCategories from "../SuggestedContent/SuggestedCategories";
+import DirectoryCardList from "../Directory/DirectoryCard/DirectoryCardList";
 import { Link } from "react-router-dom";
 /**
  * @ref @BrowserVersion

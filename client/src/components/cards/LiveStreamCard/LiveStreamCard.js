@@ -1,7 +1,7 @@
 import React from "react";
-import { numberFormatter } from "../../apis/general";
+import { numberFormatter } from "../../../apis/general";
 import { Link } from "react-router-dom";
-import Pill from "../common/Pill";
+import PillList from "../../Common/Pill/PillList";
 import "./LiveStreamCard.css";
 /**
  * A data card for live streams
@@ -10,13 +10,6 @@ const LiveStreamCard = ({ stream }) => {
   if (!stream) {
     return <div>NO STREAM Available</div>;
   }
-  const renderPills = stream.tags.map((tag) => {
-    return (
-      <React.Fragment key={tag}>
-        <Pill content={tag} />
-      </React.Fragment>
-    );
-  });
   return (
     <div className="live-card card w-full">
       <div className="relative text-sm">
@@ -56,7 +49,7 @@ const LiveStreamCard = ({ stream }) => {
           <p>{stream.user.userName}</p>
           {/* Pills*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
-            {renderPills}
+            <PillList list={stream.tags}></PillList>
           </div>
         </div>
       </div>

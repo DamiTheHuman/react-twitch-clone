@@ -1,7 +1,7 @@
 import React from "react";
 import streams from "../../../apis/streams";
-import LiveStreamCard from "../../cards/LiveStreamCard";
-import ScrollableContent from "../../common/ScrollableContent";
+import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
+import ScrollableContent from "../../Common/ScrollableContent/ScrollableContent";
 /**
  * @ref @MobileVersion
  * Suggested streams displayed for the user on the streams index

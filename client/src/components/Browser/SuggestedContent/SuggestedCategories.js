@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCard from "../../cards/CategoryCard";
+import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
 /**
  * @ref @BrowserVersion
  * Suggested categories for the browser page

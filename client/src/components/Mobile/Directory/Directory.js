@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCard from "../../cards/CategoryCard";
+import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
 import { fetchCategories } from "../../../actions";
 import { connect } from "react-redux";
 /**

@@ -1,8 +1,8 @@
 import React from "react";
-import GamingIcon from "../../../assets/icons/gaming-icon.svg";
-import IRLIcon from "../../../assets/icons/irl-icon.svg";
-import MusicIcon from "../../../assets/icons/music-icon.svg";
-import EsportsIcon from "../../../assets/icons/esports-icon.svg";
+import GamingIcon from "../../../../assets/icons/gaming-icon.svg";
+import IRLIcon from "../../../../assets/icons/irl-icon.svg";
+import MusicIcon from "../../../../assets/icons/music-icon.svg";
+import EsportsIcon from "../../../../assets/icons/esports-icon.svg";
 import DirectoryCard from "./DirectoryCard";
 /**
  * @ref @BrowserVersion

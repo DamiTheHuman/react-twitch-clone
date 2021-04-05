@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import CloseIcon from "mdi-react/CloseIcon";
+import "./Modal.css";
 
 const Modal = (props) => {
   return ReactDOM.createPortal(

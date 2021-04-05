@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Pill from "../common/Pill";
+import Pill from "../../Common/Pill/Pill";
 /**
  * A data card for videos
  **/

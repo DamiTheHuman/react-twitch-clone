@@ -3,9 +3,9 @@ import "./StreamsIndex.css";
 import { fetchCategories, fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import LiveStreamCard from "../../cards/LiveStreamCard";
-import CategoryCard from "../../cards/CategoryCard";
-import ScrollableContent from "../../common/ScrollableContent";
+import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
+import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
+import ScrollableContent from "../../Common/ScrollableContent/ScrollableContent";
 import SuggestedStreams from "./SuggestedStream";
 /**
  * @ref @MobileVersion

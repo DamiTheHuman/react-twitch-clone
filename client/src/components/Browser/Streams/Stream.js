@@ -1,6 +1,6 @@
 import React from "react";
-import StreamerInfo from "../Chat/StreamerInfo";
-import StreamChat from "../Chat/StreamChat";
+import StreamerInfo from "../Chat/StreamerInfo/StreamerInfo";
+import StreamChat from "../Chat/StreamChat/StreamChat";
 /**
  * @ref @BrowserVersion
  * A live stream componenet displayed to the user

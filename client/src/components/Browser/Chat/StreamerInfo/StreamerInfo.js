@@ -1,15 +1,16 @@
 import React from "react";
 import _ from "lodash";
 import "./StreamerInfo.css";
-import { fetchStream } from "../../../actions";
+import { fetchStream } from "../../../../actions";
 import { connect } from "react-redux";
-import { msToTime, numberFormatter } from "../../../apis/general";
-import Pill from "../../common/Pill";
+import { msToTime, numberFormatter } from "../../../../apis/general";
+import PillList from "../../../Common/Pill/PillList";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
 import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
 import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";
 import UploadIcon from "mdi-react/UploadIcon";
 import HeartOutlineIcon from "mdi-react/HeartOutlineIcon";
+
 /**
  * Renders the stream info for stream sections
  **/
@@ -46,13 +47,6 @@ class StreamerInfo extends React.Component {
     if (!this.props.stream) {
       return null;
     }
-    const renderPills = this.props.stream.tags.map((tag) => {
-      return (
-        <React.Fragment key={tag}>
-          <Pill content={tag} />
-        </React.Fragment>
-      );
-    });
     return (
       <div className="streamer-info bg-gray-100">
         <div className="stream-details flex flex-row justify-between p-4">
@@ -73,7 +67,9 @@ class StreamerInfo extends React.Component {
                 <a className="text-primary text-sm" href="/#">
                   {this.props.stream.game}
                 </a>
-                <div className="pills flex space-x-2">{renderPills}</div>
+                <div className="pills flex space-x-2">
+                  <PillList list={this.props.stream.tags} />
+                </div>
               </div>
             </div>
           </div>

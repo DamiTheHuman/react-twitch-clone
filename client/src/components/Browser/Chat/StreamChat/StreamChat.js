@@ -2,15 +2,14 @@ import React from "react";
 import "./StreamChat.css";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import AccountMultipleOutlineIcon from "mdi-react/AccountMultipleOutlineIcon";
-import ChatBox from "../../ChatBox/ChatBox";
+import ChatBox from "../../../ChatBox/ChatBox";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
-import GiftIcon from "mdi-react/GiftIcon";
-import GoldGiftIcon from "../../../assets/gifts/gift_gold.png";
-import SilverGiftIcon from "../../../assets/gifts/gift_silver.png";
-import BronzeGiftIcon from "../../../assets/gifts/gift_bronze.png";
-import GenericGiftIcon from "../../../assets/gifts/gift_generic.png";
-import StreamChatActions from "./StreamChatActions";
+import GoldGiftIcon from "../../../../assets/gifts/gift_gold.png";
+import SilverGiftIcon from "../../../../assets/gifts/gift_silver.png";
+import BronzeGiftIcon from "../../../../assets/gifts/gift_bronze.png";
+import GenericGiftIcon from "../../../../assets/gifts/gift_generic.png";
+import StreamChatActions from "../StreamChatActions/StreamChatActions";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 /**
  * @ref @BrowserVersion

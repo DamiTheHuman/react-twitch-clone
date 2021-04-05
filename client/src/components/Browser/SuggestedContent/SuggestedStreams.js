@@ -1,6 +1,6 @@
 import React from "react";
 import streams from "../../../apis/streams";
-import LiveStreamCard from "../../cards/LiveStreamCard";
+import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import ChevronDownIcon from "mdi-react/ChevronDownIcon";
 
 /**
