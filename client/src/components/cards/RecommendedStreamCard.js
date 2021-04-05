@@ -12,6 +12,13 @@ const RecommendedStreamCard = ({ stream }) => {
   if (!stream) {
     return <div>NO STREAM Available</div>;
   }
+  const renderPills = stream.tags.map((tag) => {
+    return (
+      <React.Fragment key={tag}>
+        <Pill content={tag} />
+      </React.Fragment>
+    );
+  });
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">
       <button>
@@ -46,8 +53,7 @@ const RecommendedStreamCard = ({ stream }) => {
           </div>
           {/* Stream Tags*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
-            <Pill content="Flex" />
-            <Pill content="JS" />
+            {renderPills}
           </div>
           <p className="text-xs">{stream.description}</p>
         </div>

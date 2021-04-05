@@ -5,3 +5,9 @@
 .browser .main-logo:hover {
   transform: translate(2.5px, -2.5px);
 }
+
+.browser .noti-amount {
+  font-size: 12px;
+  top: 0%;
+  transform: translate(-3px, 5px) scale(0.8);
+}
