@@ -1,10 +1,11 @@
 import React from "react";
 import "./StreamChat.css";
+import ChatBox from "../../../Common/ChatBox/ChatBox";
+import StreamChatActions from "../StreamChatActions/StreamChatActions";
+import StreamerInfo from "../StreamerInfo/StreamerInfo";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
-import ChatBox from "../../ChatBox/ChatBox";
-import StreamChatActions from "./StreamChatActions";
 import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
-import StreamerInfo from "./StreamerInfo";
+
 /**
  * @ref @MobileVersion
  * Manages the stream chat

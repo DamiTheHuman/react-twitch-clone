@@ -1,8 +1,7 @@
 import React from "react";
 import "./StreamerInfo.css";
-import _ from "lodash";
 import { Link } from "react-router-dom";
-import PillList from "../../Common/Pill/PillList";
+import PillList from "../../../Common/Pill/PillList";
 /**
  * Renders the stream info for stream sections
  **/

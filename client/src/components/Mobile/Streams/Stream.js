@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import StreamChat from "../Chat/StreamChat";
+import StreamChat from "../Chat/StreamChat/StreamChat";
 import { fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
 /**

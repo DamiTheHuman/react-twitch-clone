@@ -1,7 +1,4 @@
 import React from "react";
-import EmoticonNeutralOutlineIcon from "mdi-react/EmoticonNeutralOutlineIcon";
-import CogOutlineIcon from "mdi-react/CogOutlineIcon";
-import FlareIcon from "mdi-react/FlareIcon";
 /**
  * @ref @MobileVersion
  * Handles the stream chat actions
@@ -56,7 +53,7 @@ class StreamChatActions extends React.Component {
             <div className="flex-grow flex items-center">
               <textarea
                 id="growable-textarea"
-                className="w-full"
+                className="w-full border-opacity-0 px-2 py-1"
                 rows="1"
                 value={this.state.message}
                 onChange={(event) => {
@@ -69,7 +66,6 @@ class StreamChatActions extends React.Component {
                   }
                 }}
                 placeholder="Send a Message"
-                className="border-opacity-0 px-2 py-1"
               />
             </div>
             <div className="justify-self-end">

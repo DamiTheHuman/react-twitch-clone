@@ -2,7 +2,7 @@ import React from "react";
 import "./StreamChat.css";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import AccountMultipleOutlineIcon from "mdi-react/AccountMultipleOutlineIcon";
-import ChatBox from "../../../ChatBox/ChatBox";
+import ChatBox from "../../../Common/ChatBox/ChatBox";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
 import GoldGiftIcon from "../../../../assets/gifts/gift_gold.png";
@@ -101,7 +101,7 @@ class StreamChat extends React.Component {
 
           <div className="flex justify-between flex-grow cursor-pointer px-2 hover:bg-gray-200 font-semibold py-1.5">
             <div className="flex items-center space-x-1 ">
-              <img className="w-7" src={GoldGiftIcon}></img>
+              <img className="w-7" src={GoldGiftIcon} alt="gift-icon" />
 
               <div className="flex flex-col space-1">
                 <div>
@@ -109,7 +109,11 @@ class StreamChat extends React.Component {
                 </div>
                 <div>
                   <div className="flex items-center space-x-1">
-                    <img className="w-3 h-full" src={GenericGiftIcon}></img>
+                    <img
+                      className="w-3 h-full"
+                      src={GenericGiftIcon}
+                      alt="gift-icon"
+                    />
                     <p>120</p>
                   </div>
                 </div>
@@ -117,15 +121,23 @@ class StreamChat extends React.Component {
             </div>
             <div className="flex flex-col space-y-2">
               <div className="flex space-x-1 items-center">
-                <img className="w-5" src={SilverGiftIcon}></img>
+                <img className="w-5" src={SilverGiftIcon} alt="gift-icon" />
                 <p className="truncate">Headless</p>
-                <img className="w-3 h-3" src={GenericGiftIcon}></img>
+                <img
+                  className="w-3 h-3"
+                  src={GenericGiftIcon}
+                  alt="gift-icon"
+                />
                 <p>120</p>
               </div>
               <div className="flex space-x-1 items-center">
-                <img className="w-5" src={BronzeGiftIcon}></img>
+                <img className="w-5" src={BronzeGiftIcon} alt="gift-icon" />
                 <p className="truncate">Headless</p>
-                <img className="w-3 h-3" src={GenericGiftIcon}></img>
+                <img
+                  className="w-3 h-3"
+                  src={GenericGiftIcon}
+                  alt="gift-icon"
+                />
                 <p>120</p>
               </div>
             </div>

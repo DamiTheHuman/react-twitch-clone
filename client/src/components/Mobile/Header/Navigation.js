@@ -4,12 +4,12 @@ import AlertIcon from "mdi-react/DotsHorizontalIcon";
 import ContentCopyIcon from "mdi-react/ContentCopyIcon";
 import SearchIcon from "mdi-react/SearchIcon";
 import TwitchLogo from "../../Icon/TwitchLogo";
-import HeaderOptions from "./HeaderOptions";
+import NavigationOptions from "./NavigationOptions/NavigationOptions";
 /**
  * @ref @BrowserVersion
- * The main header for the moobile component
+ * The main header for the mobile component
  */
-class MiniHeader extends React.Component {
+class Navigation extends React.Component {
   state = { options: false };
   /** Sets the value for the toggle option*/
   toggleOptions = (value) => {
@@ -19,7 +19,7 @@ class MiniHeader extends React.Component {
   renderOptionsMenu = () => {
     if (this.state.options) {
       return (
-        <HeaderOptions
+        <NavigationOptions
           onClickOutside={() => {
             this.toggleOptions(false);
           }}
@@ -29,7 +29,7 @@ class MiniHeader extends React.Component {
   };
   render() {
     return (
-      <div className="z-20 mini-header fixed top-0 w-full py-2 px-3 bg-white shadow-xl text-xl">
+      <div className="z-20 navigation fixed top-0 w-full py-2 px-3 bg-white shadow-xl text-xl">
         <div className="flex justify-between">
           {/* First Column */}
           <div className="flex space-x-6 items-center">
@@ -62,4 +62,4 @@ class MiniHeader extends React.Component {
     );
   }
 }
-export default MiniHeader;
+export default Navigation;
