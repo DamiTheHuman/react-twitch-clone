@@ -1,8 +1,6 @@
 import React from "react";
 import _ from "lodash";
 import "./StreamerInfo.css";
-import { fetchStream } from "../../../../actions";
-import { connect } from "react-redux";
 import { msToTime, numberFormatter } from "../../../../apis/general";
 import PillList from "../../../Common/Pill/PillList";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
@@ -10,6 +8,7 @@ import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
 import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";
 import UploadIcon from "mdi-react/UploadIcon";
 import HeartOutlineIcon from "mdi-react/HeartOutlineIcon";
+import Loader from "../../../Common/Loader/Loader";
 
 /**
  * Renders the stream info for stream sections
@@ -19,13 +18,6 @@ class StreamerInfo extends React.Component {
   componentDidMount() {
     this.beginTimerLoad();
   }
-  componentDidUpdate(prevProps) {
-    if (prevProps.id !== this.props.id) {
-      this.setState({ uptime: this.props.stream.uptime });
-      return;
-    }
-    this.beginTimerLoad();
-  }
   componentWillUnmount() {
     clearInterval(this.state.intervalUpdateUptime);
   }
@@ -33,42 +25,45 @@ class StreamerInfo extends React.Component {
    * Mimics live data by updating the "uptime" every second
    **/
   beginTimerLoad = () => {
-    if (!this.state.intervalUpdateUptime && this.props.stream) {
+    if (!this.state.intervalUpdateUptime && this.props.userStreams) {
       const intervalUpdateUptime = setInterval(() => {
         this.setState({ uptime: this.state.uptime + 1000 }); //increment by a second
       }, 1000);
       this.setState({
-        uptime: this.props.stream.uptime,
+        uptime: this.props.userStreams.liveStream.uptime,
         intervalUpdateUptime: intervalUpdateUptime,
       });
     }
   };
   render() {
-    if (!this.props.stream) {
-      return null;
+    if (!this.props.userStreams) {
+      return <Loader style="py-8" />;
     }
+
     return (
       <div className="streamer-info bg-gray-100">
         <div className="stream-details flex flex-row justify-between p-4">
           <div className="flex items-center space-x-2">
             <div>
               <img
-                src={`http://localhost:3000/avatars/${this.props.stream.user.avatar}`}
-                className={`border-${this.props.stream.user.color}-400 avatar rounded-full border-2 p-0.5`}
+                src={`http://localhost:3000/avatars/${this.props.userStreams.avatar}`}
+                className={`border-${this.props.userStreams.color}-400 avatar rounded-full border-2 p-0.5`}
                 alt="A User"
               />
             </div>
             <div className="flex flex-col">
-              <h4 className="font-semibold">{this.props.stream.title}</h4>
+              <h4 className="font-semibold">
+                {this.props.userStreams.liveStream.title}
+              </h4>
               <p className="font-semibold text-sm">
-                {this.props.stream.user.userName}
+                {this.props.userStreams.userName}
               </p>
               <div className="flex space-x-2">
                 <a className="text-primary text-sm" href="/#">
-                  {this.props.stream.game}
+                  {this.props.userStreams.liveStream.game}
                 </a>
                 <div className="pills flex space-x-2">
-                  <PillList list={this.props.stream.tags} />
+                  <PillList list={this.props.userStreams.liveStream.tags} />
                 </div>
               </div>
             </div>
@@ -94,7 +89,7 @@ class StreamerInfo extends React.Component {
                 <div>
                   <AccountOutlineIcon />
                 </div>
-                <div>{this.props.stream.views}</div>
+                <div>{this.props.userStreams.liveStream.views}</div>
               </div>
               <div>{msToTime(this.state.uptime)}</div>
               <div className="p-1 rounded hover:bg-gray-200">
@@ -112,22 +107,22 @@ class StreamerInfo extends React.Component {
             <div className="flex items-center space-x-8">
               <div className="flex flex-col space-y-2">
                 <img
-                  src={`http://localhost:3000/avatars/${this.props.stream.user.avatar}`}
+                  src={`http://localhost:3000/avatars/${this.props.userStreams.avatar}`}
                   className="avatar rounded-full"
                   alt="A User"
                 />
                 <p className="text-sm text-center flex-grow">
                   {" "}
-                  {numberFormatter(this.props.stream.user.followers)} Followers
+                  {numberFormatter(this.props.userStreams.followers)} Followers
                 </p>
               </div>
               <div>
                 <h3 className="font-bold text-lg">
-                  About {this.props.stream.user.userName}
+                  About {this.props.userStreams.userName}
                 </h3>
                 <p className="text-sm">
                   We don't know much about them, but we're sure
-                  {" " + this.props.stream.user.userName} is great
+                  {" " + this.props.userStreams.userName} is great
                 </p>
               </div>
             </div>
@@ -138,13 +133,4 @@ class StreamerInfo extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  //Find the stream from the streams reducer
-  const stream = _.find(state.streams, function (stream) {
-    return stream.id === parseInt(ownProps.id);
-  });
-  return {
-    stream: stream,
-  };
-};
-export default connect(mapStateToProps, { fetchStream })(StreamerInfo);
+export default StreamerInfo;

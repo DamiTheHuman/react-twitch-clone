@@ -1,5 +1,6 @@
 import React from "react";
 import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
+import Loader from "../../Common/Loader/Loader";
 /**
  * @ref @BrowserVersion
  * Suggested categories for the browser page
@@ -10,7 +11,7 @@ class SuggestedCategories extends React.Component {
    **/
   renderCategories = () => {
     if (!this.props.categories) {
-      return <div>Loading</div>;
+      return <Loader style="py-8" />;
     }
     return this.props.categories.map((category, index) => {
       return (

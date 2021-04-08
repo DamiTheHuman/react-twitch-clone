@@ -15,7 +15,7 @@ const LiveStreamCard = ({ stream }) => {
       <div className="relative text-sm">
         <div className={`hover:bg-${stream.user.color}-400 card-main relative`}>
           <Link
-            to={`/streams/${stream.id}`}
+            to={`/${stream.user.userName}`}
             className={`hover:bg-${stream.user.color}-400`}
           >
             <div className="card-wrapper" />

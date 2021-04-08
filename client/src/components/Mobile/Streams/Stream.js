@@ -41,7 +41,7 @@ class Stream extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   //Find the stream from the streams reducer
   const stream = _.find(state.streams, function (stream) {
-    return stream.id === parseInt(ownProps.match.params.id);
+    return stream.user.userName === ownProps.id;
   });
   return {
     stream: stream,

@@ -27,7 +27,7 @@ class Stream extends React.Component {
             </div>
           </div>
           {/* Streamer Info*/}
-          {<StreamerInfo id={this.props.match.params.id} />}
+          {<StreamerInfo userStreams={this.props.userStreams} />}
         </div>
         <div>
           <StreamChat />

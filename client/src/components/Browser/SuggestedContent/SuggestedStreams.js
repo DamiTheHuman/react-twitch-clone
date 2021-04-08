@@ -2,6 +2,7 @@ import React from "react";
 import streams from "../../../apis/streams";
 import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import ChevronDownIcon from "mdi-react/ChevronDownIcon";
+import Loader from "../../Common/Loader/Loader";
 
 /**
  * @ref @BrowserVersion
@@ -53,7 +54,7 @@ class SuggestedStreams extends React.Component {
   };
   render() {
     if (!this.state.streams) {
-      return null;
+      return <Loader style="py-8" />;
     }
     return (
       <div className="stream-recommendations mb-8">

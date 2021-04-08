@@ -12,3 +12,4 @@ export const FETCH_STREAMS = "FETCH_STREAMS";
 
 export const FETCH_USERS = "FETCH_USERS";
 export const FETCH_USER = "FETCH_USER";
+export const FETCH_USER_STREAM = "FETCH_USER_STREAM";

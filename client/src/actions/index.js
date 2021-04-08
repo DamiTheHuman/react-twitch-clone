@@ -1,3 +1,4 @@
 export * from "./CategoryActions";
 export * from "./UserActions";
-export * from "./StreamsAction";
+export * from "./StreamsActions";
+export * from "./UserStreamsAction";

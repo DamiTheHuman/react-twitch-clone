@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import PillList from "../../Common/Pill/PillList";
 import ChevronRightIcon from "mdi-react/ChevronRightIcon";
 import ChevronLeftIcon from "mdi-react/ChevronLeftIcon";
+import Loader from "../../Common/Loader/Loader";
 
 /**
  * A data card for  a reccomended stream
  **/
 const RecommendedStreamCard = ({ stream }) => {
   if (!stream) {
-    return <div>NO STREAM Available</div>;
+    return <Loader style="py-8" />;
   }
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">
@@ -20,7 +21,7 @@ const RecommendedStreamCard = ({ stream }) => {
       </button>
       <div className="flex shadow-xl">
         <div className="relative">
-          <Link to={`/streams/${stream.id}`}>
+          <Link to={`/${stream.user.userName}`}>
             <div className="thumbnail">
               <video width="530" height="300" controls />
               <div className="card-text-overlay bg-red-600 px-1 rounded absolute align-t-l">

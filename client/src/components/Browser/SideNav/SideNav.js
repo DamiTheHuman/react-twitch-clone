@@ -6,6 +6,7 @@ import ArrowCollapseLeftIcon from "mdi-react/ArrowCollapseLeftIcon";
 import ArrowCollapseRightIcon from "mdi-react/ArrowCollapseRightIcon";
 import VideoOutlineIcon from "mdi-react/VideoOutlineIcon";
 import RecommendedChannel from "../../Common/RecommendedChannel/RecommendedChannel";
+import Loader from "../../Common/Loader/Loader";
 /**
  * @ref @BrowserVersion
  * The side navigation for the website
@@ -20,6 +21,9 @@ class SideNav extends React.Component {
    * Handles the event and render active stream
    */
   renderActiveStreams = () => {
+    if (this.props.streams.length === 0) {
+      return <Loader style="py-8" />;
+    }
     if (this.props.streams) {
       return this.props.streams.map((stream, index) => {
         return (

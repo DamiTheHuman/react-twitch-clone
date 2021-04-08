@@ -1,0 +1,13 @@
+.browser .browser-pattern text,
+.browser .browser-pattern span {
+  font-size: 4rem;
+  font-weight: 600;
+  fill: white !important;
+  opacity: 0.1;
+  text-transform: lowercase;
+}
+
+.browser .browser-pattern span {
+  opacity: 0;
+  left: 999999999;
+}

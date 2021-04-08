@@ -8,7 +8,7 @@ import { numberFormatter } from "../../../apis/general";
 const RecommendedChannel = ({ stream, collapse }) => {
   return (
     <Link
-      to={`/streams/${stream.id}`}
+      to={`/${stream.user.userName}`}
       className="recommended-channel px-2 pb-1 flex text-sm items-center space-x-2 hover:bg-gray-200"
     >
       {/* Streamer Avi*/}

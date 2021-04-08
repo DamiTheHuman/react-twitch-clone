@@ -12,6 +12,7 @@ import VideoCard from "../../../Cards/MediaCard/VideoCard";
 import DirectoryActions from "../DirectoryActions/DirectoryActions";
 import DirectoryLink from "../DirectoryLink/DirectoryLink";
 import ClipCard from "../../../Cards/MediaCard/ClipCard";
+import Loader from "../../../Common/Loader/Loader";
 /**
  * @ref @BrowserVersion
  * Displays a set directory game/category in directories /directory/game/:id
@@ -37,7 +38,7 @@ class DirectoryGame extends React.Component {
    */
   renderCategory = () => {
     if (!this.props.category) {
-      return <div>Loading..</div>;
+      return <Loader style="py-8" />;
     }
     const category = this.props.category;
     return (
@@ -89,7 +90,10 @@ class DirectoryGame extends React.Component {
    *This is based on if the user is on the /all url or not
    **/
   renderDirectoryContent = () => {
-    var streams = [0, 1, 2, 3, 4, 5];
+    var pseudoData = [0, 1, 2, 3, 4, 5];
+    if (!this.state.streams) {
+      return <Loader style="py-8" />;
+    }
     if (this.props.type === 0 && this.state.streams) {
       if (this.state.streams.length === 0) {
         return <div className="text-xl font-semibold">No results found</div>;
@@ -103,7 +107,7 @@ class DirectoryGame extends React.Component {
       });
       return <div className="grid grid-cols-3 gap-4">{liveStreams}</div>;
     } else if (this.props.type === 1) {
-      const videos = streams.map((stream, index) => {
+      const videos = pseudoData.map((video, index) => {
         return (
           <div key={index}>
             <VideoCard />
@@ -112,7 +116,7 @@ class DirectoryGame extends React.Component {
       });
       return <div className="grid grid-cols-3 gap-4">{videos}</div>;
     } else if (this.props.type === 2) {
-      const clips = streams.map((stream, index) => {
+      const clips = pseudoData.map((clip, index) => {
         return (
           <div key={index}>
             <ClipCard />
@@ -125,7 +129,7 @@ class DirectoryGame extends React.Component {
 
   render() {
     if (!this.props.category) {
-      return null;
+      return <Loader style="py-8" />;
     }
 
     return (
