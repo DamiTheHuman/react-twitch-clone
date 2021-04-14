@@ -44,7 +44,7 @@ class DirectoryGame extends React.Component {
     return (
       <div className="game flex items-center space-x-4 pb-4">
         <img
-          src={`http://localhost:3000/categories/${category.title}.jpg`}
+          src={`${process.env.PUBLIC_URL} categories/${category.title}.jpg`}
           className="h-auto w-36"
           alt="A Category"
         />

@@ -37,7 +37,7 @@ class DirectoryCategory extends React.Component {
     return (
       <React.Fragment>
         <img
-          src={`http://localhost:3000/categories/${category.title}.jpg`}
+          src={`${process.env.PUBLIC_URL} categories/${category.title}.jpg`}
           className="h-auto w-20"
           alt="A Category"
         />

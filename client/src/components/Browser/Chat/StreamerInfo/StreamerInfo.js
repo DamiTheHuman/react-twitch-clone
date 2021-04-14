@@ -47,7 +47,7 @@ class StreamerInfo extends React.Component {
           <div className="flex items-center space-x-2">
             <div>
               <img
-                src={`http://localhost:3000/avatars/${this.props.userStreams.avatar}`}
+                src={`${process.env.PUBLIC_URL} avatars/${this.props.userStreams.avatar}`}
                 className={`border-${this.props.userStreams.color}-400 avatar rounded-full border-2 p-0.5`}
                 alt="A User"
               />

@@ -13,7 +13,7 @@ const RecommendedChannel = ({ stream, collapse }) => {
     >
       {/* Streamer Avi*/}
       <img
-        src={`http://localhost:3000/avatars/${stream.user.avatar}`}
+        src={`${process.env.PUBLIC_URL}/avatars/${stream.user.avatar}`}
         className={`avatar border-${stream.user.color}-400 rounded-full border-2 p-0.5`}
         alt="A User"
       />

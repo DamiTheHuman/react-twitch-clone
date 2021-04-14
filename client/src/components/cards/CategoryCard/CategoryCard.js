@@ -21,7 +21,7 @@ const CategoryCard = ({ category, stretch }) => {
             <div className="card-wrapper-2" />
             <div className="thumbnail">
               <img
-                src={`http://localhost:3000/categories/${category.title}.jpg`}
+                src={`${process.env.PUBLIC_URL} categories/${category.title}.jpg`}
                 className="w-full h-auto category-image cursor-pointer"
                 alt="A new Game"
               />

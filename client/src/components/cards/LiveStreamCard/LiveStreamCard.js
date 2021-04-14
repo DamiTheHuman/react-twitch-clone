@@ -22,7 +22,7 @@ const LiveStreamCard = ({ stream }) => {
             <div className="card-wrapper-2" />
             <div className="thumbnail">
               <img
-                src={`http://localhost:3000/streams/${stream.thumbnail}`}
+                src={`${process.env.PUBLIC_URL} streams/${stream.thumbnail}`}
                 className="w-full h-auto"
                 alt="A live Stream"
               />
@@ -39,7 +39,7 @@ const LiveStreamCard = ({ stream }) => {
       <div className="card-content px-2 py-2 flex space-x-2">
         <div className="streamer-image">
           <img
-            src={`http://localhost:3000/avatars/${stream.user.avatar}`}
+            src={`${process.env.PUBLIC_URL} avatars/${stream.user.avatar}`}
             className="w-full h-auto rounded-full avatar"
             alt="A User"
           />

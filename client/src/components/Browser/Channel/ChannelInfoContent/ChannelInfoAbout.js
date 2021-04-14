@@ -10,7 +10,7 @@ const ChannelInfoAbout = ({ userStreams }) => {
           <div className="flex space-x-8">
             <div className="flex flex-col space-y-2">
               <img
-                src={`http://localhost:3000/avatars/${userStreams.avatar}`}
+                src={`${process.env.PUBLIC_URL} avatars/${userStreams.avatar}`}
                 className="avatar-sm rounded-full"
                 alt="A User"
               />

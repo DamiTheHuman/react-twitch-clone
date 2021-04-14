@@ -34,7 +34,7 @@ const RecommendedStreamCard = ({ stream }) => {
           {/* Main Stream Details*/}
           <div className="avatar flex space-x-2 items-center">
             <img
-              src={`http://localhost:3000/avatars/${stream.user.avatar}`}
+              src={`${process.env.PUBLIC_URL} avatars/${stream.user.avatar}`}
               className="rounded-full"
               alt="A User"
             />
