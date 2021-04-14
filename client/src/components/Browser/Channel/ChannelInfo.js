@@ -1,6 +1,6 @@
 import React from "react";
 import BellOutlineIcon from "mdi-react/BellOutlineIcon";
-import ChannelInfoContent from "./ChannelInfoContent";
+import ChannelInfoContent from "./ChannelInfoContent/ChannelInfoContent";
 
 const ChannelInfo = ({ userStreams }) => {
   return (

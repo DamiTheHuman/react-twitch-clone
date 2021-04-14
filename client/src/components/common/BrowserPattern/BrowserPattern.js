@@ -32,7 +32,7 @@ class BrowserPattern extends React.Component {
           height="240"
           patternUnits="userSpaceOnUse"
         >
-          <text x="auto" y={80 * (index + 1)}>
+          <text x="0" y={80 * (index + 1)}>
             {this.props.userStreams.userName}
           </text>
         </pattern>

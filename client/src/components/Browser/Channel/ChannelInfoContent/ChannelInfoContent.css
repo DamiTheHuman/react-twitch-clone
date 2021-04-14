@@ -1,0 +1,13 @@
+.browser .channel-info-content .main-info {
+  background: inherit;
+  z-index: 10;
+  position: sticky;
+  top: 3rem;
+}
+
+.browser .channel-info-content .schedule-main {
+  background: inherit;
+  z-index: 10;
+  position: sticky;
+  top: 12rem;
+}

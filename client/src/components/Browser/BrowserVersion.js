@@ -14,7 +14,7 @@ import BrowserPattern from "../Common/BrowserPattern/BrowserPattern";
 const BrowserVersion = () => {
   return (
     <div className="browser relative h-full">
-      <Route path="/:id" component={BrowserPattern} />
+      <Route path="/:id" component={BrowserPattern} exact />
       <Header />
       <div className="mt-12 min-content-height flex">
         <div>
@@ -35,7 +35,7 @@ const BrowserVersion = () => {
                 <DirectoryGame {...props} loadCategories={true} />
               )}
             />
-            <Route path="/:id" component={Channel} />
+            <Route path="/:id" component={Channel} exact />
           </Switch>
         </div>
       </div>

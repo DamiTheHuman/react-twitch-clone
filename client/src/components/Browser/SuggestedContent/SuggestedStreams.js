@@ -14,9 +14,9 @@ class SuggestedStreams extends React.Component {
     this.fetchStreams();
   }
   fetchStreams = async () => {
-    var query = "?_expand=user&_sort=views&_order=desc";
+    var query = "?_expand=user&_sort=views&_order=desc&live=true";
     if (this.props.game) {
-      query = `?_expand=user&game=${this.props.game}&_sort=views&_order=asc`;
+      query = `?_expand=user&game=${this.props.game}&_sort=views&_order=asc&live=true`;
     }
     const response = await streams.get(`/streams/${query}`);
     this.setState({ streams: response.data });

@@ -1,0 +1,12 @@
+.recent-stream-card .thumbnail img {
+  width: 296px;
+  height: 170px;
+  background: black;
+}
+.recent-stream-card .streamer-image .game {
+  width: 40px;
+  height: 56px;
+}
+.w-full .recent-stream-card .thumbnail img {
+  width: 100% !important;
+}

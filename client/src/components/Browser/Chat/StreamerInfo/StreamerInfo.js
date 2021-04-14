@@ -9,6 +9,7 @@ import AccountOutlineIcon from "mdi-react/AccountOutlineIcon";
 import UploadIcon from "mdi-react/UploadIcon";
 import HeartOutlineIcon from "mdi-react/HeartOutlineIcon";
 import Loader from "../../../Common/Loader/Loader";
+import ChannelInfoAbout from "../../Channel/ChannelInfoContent/ChannelInfoAbout";
 
 /**
  * Renders the stream info for stream sections
@@ -102,32 +103,7 @@ class StreamerInfo extends React.Component {
           </div>
         </div>
         {/* Streamer About*/}
-        <div className="streamer-about flex flex-col px-4 mb-4">
-          <div className="p-4 bg-white rounded">
-            <div className="flex items-center space-x-8">
-              <div className="flex flex-col space-y-2">
-                <img
-                  src={`http://localhost:3000/avatars/${this.props.userStreams.avatar}`}
-                  className="avatar rounded-full"
-                  alt="A User"
-                />
-                <p className="text-sm text-center flex-grow">
-                  {" "}
-                  {numberFormatter(this.props.userStreams.followers)} Followers
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">
-                  About {this.props.userStreams.userName}
-                </h3>
-                <p className="text-sm">
-                  We don't know much about them, but we're sure
-                  {" " + this.props.userStreams.userName} is great
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ChannelInfoAbout userStreams={this.props.userStreams} />
       </div>
     );
   }

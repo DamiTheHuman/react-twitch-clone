@@ -28,7 +28,7 @@ class DirectoryGame extends React.Component {
    */
   fetchStreams = async () => {
     if (this.props.match.params.id) {
-      const query = `?_expand=user&game=${this.props.match.params.id}&_sort=views&_order=asc`;
+      const query = `?_expand=user&game=${this.props.match.params.id}&_sort=views&_order=asc&live=true`;
       const response = await streams.get(`/streams/${query}`);
       this.setState({ streams: response.data });
     }
@@ -44,7 +44,7 @@ class DirectoryGame extends React.Component {
     return (
       <div className="game flex items-center space-x-4 pb-4">
         <img
-          src={`http://localhost:3000/categories/${category.boxArt}.jpg`}
+          src={`http://localhost:3000/categories/${category.title}.jpg`}
           className="h-auto w-36"
           alt="A Category"
         />

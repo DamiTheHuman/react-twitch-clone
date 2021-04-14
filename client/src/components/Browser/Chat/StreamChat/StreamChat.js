@@ -19,11 +19,7 @@ class StreamChat extends React.Component {
   state = {
     collapse: false,
     scrolledToBottom: false,
-    chatLog: Array(5).fill({
-      user: "A_Streamer",
-      comment: "Hello World!",
-      userColor: "blue",
-    }),
+    chatLog: [],
   };
   /**
    * When the visible stream chat is collapsed

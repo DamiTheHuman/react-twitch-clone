@@ -48,6 +48,11 @@ button:focus {
   left: 0.75rem;
   color: white;
 }
+.align-b-r {
+  bottom: 0.75rem;
+  right: 0.75rem;
+  color: white;
+}
 
 .align-t-r {
   bottom: 0.75rem;

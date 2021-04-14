@@ -14,7 +14,7 @@ import Loader from "../../Common/Loader/Loader";
 class SideNav extends React.Component {
   state = { collapse: false };
   componentDidMount() {
-    const query = "?_expand=user&_sort=views&_order=desc";
+    const query = "?_expand=user&_sort=views&_order=desc&live=true";
     this.props.fetchStreams(query);
   }
   /**
