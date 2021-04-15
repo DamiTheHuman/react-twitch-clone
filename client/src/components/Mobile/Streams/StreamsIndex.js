@@ -16,7 +16,7 @@ import Loader from "../../Common/Loader/Loader";
 class StreamsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCategories();
-    const query = "?_expand=user&_sort=views&_order=desc";
+    const query = "?_expand=user&_sort=views&_order=desc&live=true";
     this.props.fetchStreams(query);
   }
   /*

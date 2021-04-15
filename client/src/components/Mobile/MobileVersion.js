@@ -22,7 +22,7 @@ const MobileVersion = () => {
             component={DirectoryCategory}
             exact
           />
-          <Route path="/streams/:id" component={Stream} exact />
+          <Route path="/:id" component={Stream} exact />
         </Switch>
       </div>
     </div>
