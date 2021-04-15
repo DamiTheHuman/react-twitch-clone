@@ -1,3 +1,6 @@
+.live-card .thumbnail {
+  min-width: 300px;
+}
 .live-card .thumbnail img {
   width: 332px;
   height: 187px;

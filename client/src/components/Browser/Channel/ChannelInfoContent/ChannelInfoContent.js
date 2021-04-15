@@ -63,7 +63,7 @@ class ChannelInfoContent extends React.Component {
               {/**Main Channel details */}
               <div className="flex space-x-2 items-center">
                 <img
-                  src={`${process.env.PUBLIC_URL} avatars/${this.props.userStreams.avatar}`}
+                  src={`${process.env.PUBLIC_URL}/avatars/${this.props.userStreams.avatar}`}
                   className={`avatar border-${this.props.userStreams.color}-400 w-16 h-16  rounded-full border-2 p-0.5`}
                   alt="A User"
                 />

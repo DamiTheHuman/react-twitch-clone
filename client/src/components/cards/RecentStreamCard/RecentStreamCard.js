@@ -21,7 +21,7 @@ const RecentStreamCard = ({ stream, userStreams }) => {
             <div className="card-wrapper-2" />
             <div className="thumbnail">
               <img
-                src={`${process.env.PUBLIC_URL} streams/${stream.thumbnail}`}
+                src={`${process.env.PUBLIC_URL}/streams/${stream.thumbnail}`}
                 className="w-full h-auto"
                 alt="A recent Stream"
               />
@@ -39,7 +39,7 @@ const RecentStreamCard = ({ stream, userStreams }) => {
       <div className="card-content py-2 flex space-x-2">
         <div className="streamer-image">
           <img
-            src={`${process.env.PUBLIC_URL} categories/${stream.game}.jpg`}
+            src={`${process.env.PUBLIC_URL}/categories/${stream.game}.jpg`}
             className="w-full h-auto game"
             alt="The recnet game"
           />

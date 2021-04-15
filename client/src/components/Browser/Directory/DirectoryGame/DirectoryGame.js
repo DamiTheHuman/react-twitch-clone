@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import { contentAmountInSpace } from "../../../../apis/general";
 import streams from "../../../../apis/streams";
 import { fetchCategoryByTitle } from "../../../../actions";
 import { connect } from "react-redux";
@@ -18,11 +19,23 @@ import Loader from "../../../Common/Loader/Loader";
  * Displays a set directory game/category in directories /directory/game/:id
  */
 class DirectoryGame extends React.Component {
-  state = { streams: null };
+  state = { streams: null, contentLimit: 3 };
   componentDidMount() {
     this.props.fetchCategoryByTitle(this.props.match.params.id);
+    window.addEventListener("resize", this.updateContentWidth);
+    this.updateContentWidth();
     this.fetchStreams();
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateContentWidth);
+  }
+  /**
+   * Update the content width based on the resolution
+   */
+  updateContentWidth = () => {
+    this.width = document.getElementById("main-content").offsetWidth;
+    this.setState({ contentLimit: contentAmountInSpace(this.width, 300) });
+  };
   /**
    * Retrives the streams belonging to the specified category
    */
@@ -44,7 +57,7 @@ class DirectoryGame extends React.Component {
     return (
       <div className="game flex items-center space-x-4 pb-4">
         <img
-          src={`${process.env.PUBLIC_URL} categories/${category.title}.jpg`}
+          src={`${process.env.PUBLIC_URL}/categories/${category.title}.jpg`}
           className="h-auto w-36"
           alt="A Category"
         />
@@ -94,37 +107,43 @@ class DirectoryGame extends React.Component {
     if (!this.state.streams) {
       return <Loader extraStyle="py-8" />;
     }
+    var content = null;
+
     if (this.props.type === 0 && this.state.streams) {
       if (this.state.streams.length === 0) {
         return <div className="text-xl font-semibold">No results found</div>;
       }
-      const liveStreams = this.state.streams.map((stream, index) => {
+      content = this.state.streams.map((stream, index) => {
         return (
           <div key={index}>
             <LiveStreamCard stream={stream} />
           </div>
         );
       });
-      return <div className="grid grid-cols-3 gap-4">{liveStreams}</div>;
     } else if (this.props.type === 1) {
-      const videos = pseudoData.map((video, index) => {
+      content = pseudoData.map((video, index) => {
         return (
           <div key={index}>
             <VideoCard />
           </div>
         );
       });
-      return <div className="grid grid-cols-3 gap-4">{videos}</div>;
     } else if (this.props.type === 2) {
-      const clips = pseudoData.map((clip, index) => {
+      content = pseudoData.map((clip, index) => {
         return (
           <div key={index}>
             <ClipCard />
           </div>
         );
       });
-      return <div className="grid grid-cols-3 gap-4">{clips}</div>;
     }
+    return (
+      <div
+        className={`grid grid-cols-${this.state.contentLimit} space-x-2 mb-2`}
+      >
+        {content}
+      </div>
+    );
   };
 
   render() {

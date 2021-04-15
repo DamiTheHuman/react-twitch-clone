@@ -20,7 +20,10 @@ const BrowserVersion = () => {
         <div>
           <SideNav />
         </div>
-        <div className="flex-grow relative bg-transparent content">
+        <div
+          id="main-content"
+          className="flex-grow relative bg-transparent content"
+        >
           <Switch>
             <Route path="/" component={StreamsIndex} exact />
             <Route path="/directory" component={Directory} exact />

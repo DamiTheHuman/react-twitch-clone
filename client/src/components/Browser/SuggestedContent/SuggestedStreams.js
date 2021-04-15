@@ -1,4 +1,5 @@
 import React from "react";
+import { contentAmountInSpace } from "../../../apis/general";
 import streams from "../../../apis/streams";
 import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import ChevronDownIcon from "mdi-react/ChevronDownIcon";
@@ -9,10 +10,26 @@ import Loader from "../../Common/Loader/Loader";
  * Suggested streams displayed for the user on the streams index
  */
 class SuggestedStreams extends React.Component {
-  state = { showMore: false, streams: [] };
+  state = { showMore: false, streams: [], contentLimit: 3 };
   componentDidMount() {
+    window.addEventListener("resize", this.updateContentWidth);
+    this.updateContentWidth();
     this.fetchStreams();
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateContentWidth);
+  }
+  /**
+   * Update the content width based on the resolution
+   */
+  updateContentWidth = () => {
+    this.width = document.getElementById("main-content").offsetWidth;
+    this.setState({ contentLimit: contentAmountInSpace(this.width, 300) });
+  };
+
+  /**
+   * Fetch a list of streams relevent to the suggested stream set
+   */
   fetchStreams = async () => {
     var query = "?_expand=user&_sort=views&_order=desc&live=true";
     if (this.props.game) {
@@ -21,9 +38,17 @@ class SuggestedStreams extends React.Component {
     const response = await streams.get(`/streams/${query}`);
     this.setState({ streams: response.data });
   };
+  /**
+   * Render the current live streams
+   */
   renderLiveStreams = () => {
     return this.state.streams
-      .slice(0, !this.state.showMore ? 3 : 6)
+      .slice(
+        0,
+        !this.state.showMore
+          ? this.state.contentLimit
+          : this.state.contentLimit * 2
+      )
       .map((stream, index) => {
         return (
           <div key={index}>
@@ -32,8 +57,14 @@ class SuggestedStreams extends React.Component {
         );
       });
   };
-  renderShowMore = () => {
-    if (this.state.showMore || this.state.streams.length <= 3) {
+  /**
+   * Renders the show more button if the button has not been clicked and there is enough content
+   */
+  renderShowMoreButton = () => {
+    if (
+      this.state.showMore ||
+      this.state.streams.length <= this.state.contentLimit
+    ) {
       return null;
     }
     return (
@@ -57,12 +88,14 @@ class SuggestedStreams extends React.Component {
       return <Loader extraStyle={"py-8"} />;
     }
     return (
-      <div className="stream-recommendations mb-8">
+      <div className="relative stream-recommendations mb-8">
         {this.props.title}
-        <div className="grid grid-cols-3 gap-2 mb-2">
+        <div
+          className={`grid grid-cols-${this.state.contentLimit} space-x-2 mb-2`}
+        >
           {this.renderLiveStreams()}
         </div>
-        {this.renderShowMore()}
+        {this.renderShowMoreButton()}
       </div>
     );
   }

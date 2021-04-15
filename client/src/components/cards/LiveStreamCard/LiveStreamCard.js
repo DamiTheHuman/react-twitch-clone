@@ -11,7 +11,7 @@ const LiveStreamCard = ({ stream }) => {
     return <div>NO STREAM Available</div>;
   }
   return (
-    <div className="live-card card w-full">
+    <div className="live-card card">
       <div className="relative text-sm">
         <div className={`hover:bg-${stream.user.color}-400 card-main relative`}>
           <Link
@@ -22,7 +22,7 @@ const LiveStreamCard = ({ stream }) => {
             <div className="card-wrapper-2" />
             <div className="thumbnail">
               <img
-                src={`${process.env.PUBLIC_URL} streams/${stream.thumbnail}`}
+                src={`${process.env.PUBLIC_URL}/streams/${stream.thumbnail}`}
                 className="w-full h-auto"
                 alt="A live Stream"
               />
@@ -39,7 +39,7 @@ const LiveStreamCard = ({ stream }) => {
       <div className="card-content px-2 py-2 flex space-x-2">
         <div className="streamer-image">
           <img
-            src={`${process.env.PUBLIC_URL} avatars/${stream.user.avatar}`}
+            src={`${process.env.PUBLIC_URL}/avatars/${stream.user.avatar}`}
             className="w-full h-auto rounded-full avatar"
             alt="A User"
           />

@@ -1,6 +1,7 @@
 import React from "react";
 import { fetchCategories, fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
+import { contentAmountInSpace } from "../../../apis/general";
 import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
 import DirectoryCardList from "./DirectoryCard/DirectoryCardList";
@@ -11,7 +12,10 @@ import DirectoryLink from "./DirectoryLink/DirectoryLink";
  * The main directory which displays a categories or streams
  */
 class Directory extends React.Component {
+  state = { contentLimitCategories: 5, contentLimitStreams: 0 };
   componentDidMount() {
+    window.addEventListener("resize", this.updateContentWidth);
+    this.updateContentWidth();
     if (!this.props.loadCategories) {
       this.props.fetchCategories();
     } else {
@@ -20,6 +24,19 @@ class Directory extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateContentWidth);
+  }
+  /**
+   * Update the content width based on the resolution
+   */
+  updateContentWidth = () => {
+    this.width = document.getElementById("main-content").offsetWidth;
+    this.setState({
+      contentLimitCategories: contentAmountInSpace(this.width, 200),
+      contentLimitStreams: contentAmountInSpace(this.width, 300),
+    });
+  };
   /**
    *Loads the necessary directory content
    *This is based on if the user is on the /all url or not
@@ -33,7 +50,13 @@ class Directory extends React.Component {
           </div>
         );
       });
-      return <div className="grid grid-cols-3 gap-4">{liveStreams}</div>;
+      return (
+        <div
+          className={`grid grid-cols-${this.state.contentLimitStreams} space-x-2 mb-2`}
+        >
+          {liveStreams}
+        </div>
+      );
     } else if (this.props.categories) {
       const categories = this.props.categories.map((category, index) => {
         return (
@@ -42,7 +65,13 @@ class Directory extends React.Component {
           </div>
         );
       });
-      return <div className="grid grid-cols-5 gap-4">{categories}</div>;
+      return (
+        <div
+          className={`grid grid-cols-${this.state.contentLimitCategories} space-x-2`}
+        >
+          {categories}
+        </div>
+      );
     }
   };
   render() {

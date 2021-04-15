@@ -20,7 +20,7 @@ const RecentCategoryCard = ({ stream, userStreams }) => {
             <div className="card-wrapper-2" />
             <div className="thumbnail">
               <img
-                src={`${process.env.PUBLIC_URL} categories/${stream.game}.jpg`}
+                src={`${process.env.PUBLIC_URL}/categories/${stream.game}.jpg`}
                 className="w-full h-auto cursor-pointer"
                 alt="Recent Game"
               />
