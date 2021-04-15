@@ -38,7 +38,7 @@ class DirectoryGame extends React.Component {
    */
   renderCategory = () => {
     if (!this.props.category) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle="py-8" />;
     }
     const category = this.props.category;
     return (
@@ -92,7 +92,7 @@ class DirectoryGame extends React.Component {
   renderDirectoryContent = () => {
     var pseudoData = [0, 1, 2, 3, 4, 5];
     if (!this.state.streams) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle="py-8" />;
     }
     if (this.props.type === 0 && this.state.streams) {
       if (this.state.streams.length === 0) {
@@ -129,7 +129,7 @@ class DirectoryGame extends React.Component {
 
   render() {
     if (!this.props.category) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle="py-8" />;
     }
 
     return (

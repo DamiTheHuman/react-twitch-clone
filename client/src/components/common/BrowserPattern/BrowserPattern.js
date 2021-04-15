@@ -71,7 +71,7 @@ class BrowserPattern extends React.Component {
       <div className="browser-pattern absolute h-full w-full min-h-screen bg-primary">
         <span
           ref={(node) => {
-            if (node && this.state.width != node.offsetWidth) {
+            if (node && this.state.width !== node.offsetWidth) {
               this.setState({
                 width: node.offsetWidth,
               });

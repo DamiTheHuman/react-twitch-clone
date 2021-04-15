@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import "./StreamsIndex.css";
 import { fetchCategories, fetchStreams } from "../../../actions/";
 import { connect } from "react-redux";
@@ -7,6 +8,7 @@ import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
 import CategoryCard from "../../Cards/CategoryCard/CategoryCard";
 import ScrollableContent from "../../Common/ScrollableContent/ScrollableContent";
 import SuggestedStreams from "..//Suggested/SuggestedStream";
+import Loader from "../../Common/Loader/Loader";
 /**
  * @ref @MobileVersion
  * The main URL for all the streams displayed
@@ -21,8 +23,8 @@ class StreamsIndex extends React.Component {
    *Render the list of categories retrieved from the server when available
    */
   renderCategories = () => {
-    if (!this.props.categories) {
-      return <div>Loading</div>;
+    if (_.isEmpty(this.props.categories)) {
+      return <Loader extraStyle={"py-8"} />;
     }
     return this.props.categories.map((category, index) => {
       return (
@@ -36,8 +38,8 @@ class StreamsIndex extends React.Component {
    *Render the list of streams from the server
    */
   renderLiveStreams = () => {
-    if (!this.props.streams) {
-      return <div>Loading</div>;
+    if (_.isEmpty(this.props.streams)) {
+      return <Loader extraStyle={"py-8"} />;
     }
     return this.props.streams.map((stream, index) => {
       return (
@@ -62,7 +64,7 @@ class StreamsIndex extends React.Component {
         </div>
         {/* Live Channels the user may like*/}
         <ScrollableContent>{this.renderLiveStreams()}</ScrollableContent>
-        <div className="inline uppercase sm:text-2xl text-base font-semibold text-secondaryV">
+        <div className="inline w-full uppercase sm:text-2xl text-base font-semibold text-secondaryV">
           <Link to="/directory" className="text-primary">
             Categories{" "}
           </Link>
@@ -72,7 +74,7 @@ class StreamsIndex extends React.Component {
 
         <SuggestedStreams
           title={
-            <div className="inline uppercase sm:text-2xl text-base font-semibold text-secondaryV">
+            <div className="inline w-full uppercase sm:text-2xl text-base font-semibold text-secondaryV">
               <span>RECOMMENDED </span>
               <Link to="/directory/game/Minecraft" className="text-primary">
                 Minecraft{" "}
@@ -85,7 +87,7 @@ class StreamsIndex extends React.Component {
 
         <SuggestedStreams
           title={
-            <div className="inline uppercase sm:text-2xl text-sm font-semibold text-secondaryV">
+            <div className="inline w-full uppercase sm:text-2xl text-sm font-semibold text-secondaryV">
               <span>RECOMMENDED </span>
               <Link to="/directory/game/Fortnite" className="text-primary">
                 Fortnite{" "}

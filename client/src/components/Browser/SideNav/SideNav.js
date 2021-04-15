@@ -22,7 +22,7 @@ class SideNav extends React.Component {
    */
   renderActiveStreams = () => {
     if (this.props.streams.length === 0) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle={"py-8"} />;
     }
     if (this.props.streams) {
       return this.props.streams.map((stream, index) => {

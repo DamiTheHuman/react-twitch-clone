@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 import { fetchUserStream } from "../../../actions";
 import { connect } from "react-redux";
 import Stream from "../Streams/Stream";
@@ -34,7 +33,7 @@ class Channel extends React.Component {
   };
   render() {
     if (!this.props.userStreams) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle="py-8" />;
     }
     return <div className="channel">{this.renderContent()}</div>;
   }

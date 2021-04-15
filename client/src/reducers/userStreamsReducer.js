@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { FETCH_USER_STREAM } from "../actions/types";
 const INITIAL_STATE = { user: null, currentLiveStream: null };
 

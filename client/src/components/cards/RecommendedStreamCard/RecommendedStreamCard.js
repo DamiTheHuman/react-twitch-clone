@@ -12,7 +12,7 @@ import Loader from "../../Common/Loader/Loader";
  **/
 const RecommendedStreamCard = ({ stream }) => {
   if (!stream) {
-    return <Loader style="py-8" />;
+    return <Loader extraStyle={"py-8"} />;
   }
   return (
     <div className="recommended-stream mb-16 flex flex-row justify-between items-center">

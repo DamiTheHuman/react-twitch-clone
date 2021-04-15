@@ -11,7 +11,7 @@ class SuggestedCategories extends React.Component {
    **/
   renderCategories = () => {
     if (!this.props.categories) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle={"py-8"} />;
     }
     return this.props.categories.map((category, index) => {
       return (

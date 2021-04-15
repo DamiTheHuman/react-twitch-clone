@@ -54,7 +54,7 @@ class SuggestedStreams extends React.Component {
   };
   render() {
     if (!this.state.streams) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle={"py-8"} />;
     }
     return (
       <div className="stream-recommendations mb-8">

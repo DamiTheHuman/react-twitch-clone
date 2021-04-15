@@ -1,7 +1,6 @@
 import React from "react";
-import _ from "lodash";
 import "./StreamerInfo.css";
-import { msToTime, numberFormatter } from "../../../../apis/general";
+import { msToTime } from "../../../../apis/general";
 import PillList from "../../../Common/Pill/PillList";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
 import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
@@ -38,7 +37,7 @@ class StreamerInfo extends React.Component {
   };
   render() {
     if (!this.props.userStreams) {
-      return <Loader style="py-8" />;
+      return <Loader extraStyle="py-8" />;
     }
 
     return (

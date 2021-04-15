@@ -50,6 +50,8 @@ class ChannelInfoContent extends React.Component {
         return <ChannelInfoVideos userStreams={this.props.userStreams} />;
       case 4:
         return <div>Chat</div>;
+      default:
+        break;
     }
   };
   render() {

@@ -1,13 +1,14 @@
 import React from "react";
 import streams from "../../../apis/streams";
 import LiveStreamCard from "../../Cards/LiveStreamCard/LiveStreamCard";
+import Loader from "../../Common/Loader/Loader";
 import ScrollableContent from "../../Common/ScrollableContent/ScrollableContent";
 /**
  * @ref @MobileVersion
  * Suggested streams displayed for the user on the streams index
  */
 class SuggestedStreams extends React.Component {
-  state = { streams: [] };
+  state = { streams: null };
   componentDidMount() {
     this.fetchStreams();
   }
@@ -20,6 +21,13 @@ class SuggestedStreams extends React.Component {
     this.setState({ streams: response.data });
   };
   renderLiveStreams = () => {
+    if (!this.state.streams) {
+      return (
+        <div className="w-full">
+          <Loader extraStyle={"py-8"} />
+        </div>
+      );
+    }
     return this.state.streams.map((stream, index) => {
       return (
         <div className="w-max" key={index}>
@@ -29,9 +37,6 @@ class SuggestedStreams extends React.Component {
     });
   };
   render() {
-    if (!this.state.streams) {
-      return null;
-    }
     return (
       <div className="stream-recommendations">
         {this.props.title}
