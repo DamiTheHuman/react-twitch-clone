@@ -1,20 +1,20 @@
 import React from "react";
-import _ from "lodash";
 import StreamChat from "../Chat/StreamChat/StreamChat";
-import { fetchStreams } from "../../../actions/";
+import { fetchUserStream } from "../../../actions/";
 import { connect } from "react-redux";
+import Loader from "../../Common/Loader/Loader";
 /**
  * @ref @MobileVersion
  * A live stream componenet displayed to the user
  */
 class Stream extends React.Component {
   componentDidMount() {
-    const query = "?_expand=user&_sort=views&_order=desc";
-    this.props.fetchStreams(query);
+    const userName = this.props.match.params.id;
+    this.props.fetchUserStream(userName);
   }
   render() {
-    if (!this.props.stream) {
-      return null;
+    if (!this.props.userStreams) {
+      return <Loader extraStyle={"py-8"} />;
     }
     return (
       <div className="stream flex xl:flex-row flex-col relative">
@@ -31,20 +31,16 @@ class Stream extends React.Component {
           </div>
         </div>
         <div>
-          <StreamChat stream={this.props.stream} />
+          <StreamChat stream={this.props.userStreams.recentLiveStream} />
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  //Find the stream from the streams reducer
-  const stream = _.find(state.streams, function (stream) {
-    return stream.user.userName === ownProps.id;
-  });
+const mapStateToProps = (state) => {
   return {
-    stream: stream,
+    userStreams: state.userStreams.recentLiveStream,
   };
 };
-export default connect(mapStateToProps, { fetchStreams })(Stream);
+export default connect(mapStateToProps, { fetchUserStream })(Stream);

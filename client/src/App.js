@@ -9,10 +9,10 @@ class App extends React.Component {
   state = { width: 0, height: 0, deviceType: "Desktop" };
   updateDimensions = () => {
     if (this.state.deviceType === "Desktop" && window.innerWidth <= 768) {
-      window.location.reload();
+      //window.location.reload();
       return;
     } else if (this.state.deviceType === "Mobile" && window.innerWidth > 768) {
-      window.location.reload();
+      //window.location.reload();
       return;
     }
     this.setState({

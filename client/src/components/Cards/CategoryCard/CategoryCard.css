@@ -1,3 +1,7 @@
 .mobile .index-category {
   width: 256px;
 }
+
+.browser .category-card .card-main .thumbnail img {
+  height: 256px !important;
+}

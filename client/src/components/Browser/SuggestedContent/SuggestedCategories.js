@@ -34,7 +34,7 @@ class SuggestedCategories extends React.Component {
       .slice(0, this.state.contentLimit)
       .map((category, index) => {
         return (
-          <div className="flex-nowrap" key={index}>
+          <div key={index}>
             <CategoryCard category={category} />
           </div>
         );
