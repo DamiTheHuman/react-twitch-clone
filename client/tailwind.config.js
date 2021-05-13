@@ -1,6 +1,36 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+    options: {
+      safelist: [
+        "bg-red-400",
+        "bg-blue-400",
+        "bg-green-400",
+        "bg-orange-400",
+        "bg-teal-400",
+        "bg-pink-400",
+        "bg-yellow-400",
+        "bg-gray-400",
+        "hover:bg-red-400",
+        "hover:bg-blue-400",
+        "hover:bg-green-400",
+        "hover:bg-orange-400",
+        "hover:bg-teal-400",
+        "hover:bg-pink-400",
+        "hover:bg-yellow-400",
+        "hover:bg-gray-400",
+        "border-red-400",
+        "border-blue-400",
+        "border-green-400",
+        "border-orange-400",
+        "border-teal-400",
+        "border-pink-400",
+        "border-yellow-400",
+        "border-gray-400",
+      ],
+    },
+  },
   darkMode: "class", // or 'media' or 'class'
   theme: {
     colors: {

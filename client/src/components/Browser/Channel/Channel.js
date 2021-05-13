@@ -32,8 +32,14 @@ class Channel extends React.Component {
     }
   };
   render() {
-    if (!this.props.userStreams) {
+    if (!this.props.userStreams && this.props.userStreams !== "") {
       return <Loader extraStyle="py-8" />;
+    } else if (this.props.userStreams === "") {
+      return (
+        <div className="text-center py-32 text-2xl font-bold">
+          This streamer does not exist
+        </div>
+      );
     }
     return <div className="channel">{this.renderContent()}</div>;
   }
