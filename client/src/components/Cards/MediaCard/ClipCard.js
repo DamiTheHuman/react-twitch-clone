@@ -40,8 +40,8 @@ const ClipCard = () => {
         </div>
         <div className="stream-details text-sm text-black">
           <h5 className="font-semibold">A New Clip</h5>
-          <p>Headless Clipper </p>
-          <p>Clipped By HeadlessCoderFan</p>
+          <p>Dami Clipper </p>
+          <p>Clipped By Dami Script</p>
         </div>
       </div>
     </div>
