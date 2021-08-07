@@ -40,7 +40,7 @@ class StreamChat extends React.Component {
       return;
     }
     const text = {
-      user: "HeadlessCoder",
+      user: "Dami Script",
       comment: message,
       userColor: "red",
     };
