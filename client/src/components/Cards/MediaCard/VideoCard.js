@@ -41,7 +41,7 @@ const VideoCard = () => {
         </div>
         <div className="stream-details text-sm text-black">
           <h5 className="font-semibold">Discussing AI</h5>
-          <p>Headless Coder</p>
+          <p>Dami Script</p>
           {/* Pills*/}
           <div className="pills flex flex-nowrap overflow-hidden space-x-2">
             <Pill content="Action" />
