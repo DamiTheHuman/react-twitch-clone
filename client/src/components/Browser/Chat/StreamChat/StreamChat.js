@@ -101,7 +101,7 @@ class StreamChat extends React.Component {
 
               <div className="flex flex-col space-1">
                 <div>
-                  <p className="truncate">Headless</p>
+                  <p className="truncate">Random</p>
                 </div>
                 <div>
                   <div className="flex items-center space-x-1">
@@ -118,7 +118,7 @@ class StreamChat extends React.Component {
             <div className="flex flex-col space-y-2">
               <div className="flex space-x-1 items-center">
                 <img className="w-5" src={SilverGiftIcon} alt="gift-icon" />
-                <p className="truncate">Headless</p>
+                <p className="truncate">Random</p>
                 <img
                   className="w-3 h-3"
                   src={GenericGiftIcon}
@@ -128,7 +128,7 @@ class StreamChat extends React.Component {
               </div>
               <div className="flex space-x-1 items-center">
                 <img className="w-5" src={BronzeGiftIcon} alt="gift-icon" />
-                <p className="truncate">Headless</p>
+                <p className="truncate">Random</p>
                 <img
                   className="w-3 h-3"
                   src={GenericGiftIcon}
